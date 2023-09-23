@@ -1,55 +1,73 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "CO2 emissions per capita (2012)",
+  "title": "Country Emissions per Capita (2022)",
   "width": 800,
-  "height": 8400,
-  "projection": {"type": "equalEarth"},
-
+  "height": 500,
   "data": {
-    "url": "/ne_110m.json/",
+    "url": "ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
-
-  "layer": [  
+  "projection": {"type": "equalEarth"},
+  "layer":[
     {
       "transform": [
-        {
-          "calculate": "'Data is not available in ' + datum.properties.NAME",
-          "as": "noData"
-        }
+        {"calculate": "'Data is not available in ' + datum.properties.SOVEREIGNT", "as": "note"}
       ],
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
-      "encoding": {"tooltip": {"field": "noData"}}
+      "mark": {"type": "geoshape", "fill": "lightgray"},
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
+    {
+      "data": {
+        "url": "ne_110m_graticules_30.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
     },
     {
       "transform": [
         {
-          "lookup": "properties.postal",
+          "lookup": "properties.SOVEREIGNT",
           "from": {
             "data": {
               "url": "/../data/country_emissions.csv"
             },
-            "key": "code",
-            "fields": ["country, CO2, Population"]
+            "key": "Country",
+            "fields": ["emission_capita"]
           }
         },
         {
-          "calculate": "datum.CO2 / datum.Population",
-          "as": "CO2_per_capita"
+          "calculate": "datum.emission_capita",
+          "as": "emission_capita"
         }
       ],
-      "mark": {"type": "geoshape", "stroke": "white"},
+      "mark": {"type": "geoshape"},
       "encoding": {
         "color": {
-          "field": "CO2_per_capita",
+          "field": "emission_capita",
+          "title": "Emission per Capita ",
           "type": "quantitative",
-          "scale": {"type": "log"}
+          "scale": {
+            "type": "log",
+            "scheme": "reds"
+          }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-          {"field": "CO2_per_capita", "type": "quantitative", "title": "CO2 per capita"}
+          {"field": "emission_capita", "type": "quantitative", "title": "Emission per Capita"}
         ]
       }
     }
   ]
+  
 }
