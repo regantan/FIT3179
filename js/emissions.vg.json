@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Country Emissions per Capita (2022)",
+  "title": "Country Emissions per Capita in Tons (2022)",
   "width": 800,
   "height": 500,
   "data": {
@@ -55,7 +55,7 @@
       "encoding": {
         "color": {
           "field": "emission_capita",
-          "title": "Emission per Capita ",
+          "title": "Emission per Capita (Tons)",
           "type": "quantitative",
           "scale": {
             "type": "log",
