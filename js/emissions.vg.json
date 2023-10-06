@@ -67,6 +67,18 @@
           {"field": "emission_capita", "type": "quantitative", "title": "Emission per Capita"}
         ]
       }
+    },
+    {
+      "mark": {
+        "type": "text", "color": "black", "fontSize": 10, "fontStyle": "italic",
+        "dx": 0, "xOffset": -355, "dy": -80, "align": "left"
+        },
+      "encoding": {
+        "text": {"value": ["Unites States of America","has the highest","emissions capita rate","of 1232.670715 tons", "per capita in the world"]},
+        "opacity": {
+          "value": 0.025
+        }
+      }
     }
   ]
   
