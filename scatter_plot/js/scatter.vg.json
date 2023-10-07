@@ -1,0 +1,159 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Scatter Plot of BMI against Schooling Duration over Different Countries from Year 2000 to 2015",
+  "data": {"url": "https://raw.githubusercontent.com/mingsheng2002/3179-Data-Visualisation-Project-2/main/scatter_plot/js/Life%20Expectancy%20Data_scatterplot.json"},
+  "width": 800,
+  "height": 500,
+  "layer": [
+    {
+      "encoding": {
+        "x": {
+          "field": "Schooling (years)",
+          "type": "quantitative",
+          "scale": {"domain": [0, 21]},
+          "axis": {"tickCount": 5, "title": "Schooling (years)"}
+        },
+        "y": {
+          "field": "BMI",
+          "type": "quantitative",
+          "scale": {"domain": [0,80]},
+          "axis": {"tickCount": 5, "title": "BMI"}
+        },
+        "tooltip":[
+          {"field": "Country", "type": "nominal"},
+          {"field": "Year", "type": "ordinal"},
+          {"field": "Schooling (years)", "type": "quantitative", "format": ".2f"},
+          {"field": "BMI", "type": "quantitative", "format": ".2f"}
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "size": 4,
+            "color": "lightslategray",
+            "strokeCap": "round"
+          },
+          "encoding": {
+            "detail": {"field": "Country"},
+            "order": {"field": "Year"},
+            "opacity": {
+              "condition": {
+                "test": {"or": [
+                  {"param": "hovered", "empty": false},
+                  {"param": "clicked", "empty": false}
+                ]},
+                "value": 0.8
+              },
+              "value": 0
+            }
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "Year",
+              "value": [{"Year": 2000}],
+              "select": {
+                "type": "point",
+                "fields": ["Year"]
+              },
+              "bind": {
+                "name": "Year",
+                "input": "range",
+                "min": 2000, "max": 2015, "step": 1
+              }
+            },
+            {
+              "name": "hovered",
+              "select": {
+                "type": "point",
+                "fields": ["Country"],
+                "toggle": false,
+                "on": "mouseover"
+              }
+            },
+            {
+              "name": "clicked",
+              "select": {"type": "point", "fields": ["Country"]}
+            }
+          ],
+          "transform": [{"filter": {"param": "Year"}}],
+          "mark": {"type": "circle", "size": 100, "opacity": 0.9}
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "and": [
+                  {"param": "Year"},
+                  {"or": [
+                    {"param": "clicked", "empty": false},
+                    {"param": "hovered", "empty": false}
+                  ]}
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "yOffset": -12,
+            "fontSize": 12,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {"field": "Country"}
+          }
+        },
+        {
+          "transform": [
+            {"filter": {"param": "hovered", "empty": false}},
+            {"filter": {"not": {"param": "Year"}}}
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "yOffset": -12,
+                "fontSize": 12,
+                "color": "gray"
+              },
+              "encoding": {"text": {"field": "Year"}}
+            },
+            {"mark": {"type": "circle", "color": "gray"}}
+          ]
+        }
+      ]
+    },
+    {
+      "mark": {"type": "text", "color": "black", "fontSize": 13, "fontStyle": "italic",
+               "dx": 150, "xOffset": 250, "dy": -175, "align": "left"
+      },
+      "encoding": {
+        "text": {"value": ["Australia had constantly","be the country that had","the highest average","schooling duration over","the 16 years."]},
+          "opacity": {
+              "condition": {
+                  "test": "datum.Country == 'Australia' && datum.Year == 2000",
+                  "value": 1
+              },
+              "value": 0
+          }
+        }
+      },
+      {
+        "mark": {"type": "text", "color": "black", "fontSize": 13, "fontStyle": "italic",
+                 "dx": -150, "xOffset": -215, "dy": -150, "align": "left"
+        },
+        "encoding": {
+            "text": {"value": ["The average schooling duration","worldwide had been gradually", "increasing from Year 2000 to 2015."]},
+            "opacity": {
+                "condition": {
+                    "test": "datum.Country == 'Kiribati' && datum.Year == 2000",
+                    "value": 1
+                },
+                "value": 0
+            }
+          }
+        }
+  ]
+}
