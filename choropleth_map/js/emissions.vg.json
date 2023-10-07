@@ -68,8 +68,8 @@
     },
     {
       "mark": {
-        "type": "text", "color": "black", "fontSize": 10, "fontStyle": "italic",
-        "dx": 0, "xOffset": -355, "dy": -80, "align": "left"
+        "type": "text", "color": "black", "fontSize": 8, "fontStyle": "italic",
+        "dx": 0, "xOffset": -175, "dy": 0, "align": "left"
         },
       "encoding": {
         "text": {"value": ["Unites States of America","has the highest","emissions capita rate","of 1232.670715 tons", "per capita in the world"]},
