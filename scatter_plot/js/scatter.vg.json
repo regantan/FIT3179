@@ -1,159 +1,147 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Scatter Plot of BMI against Schooling Duration over Different Countries from Year 2000 to 2015",
-  "data": {"url": "https://raw.githubusercontent.com/mingsheng2002/3179-Data-Visualisation-Project-2/main/scatter_plot/js/Life%20Expectancy%20Data_scatterplot.json"},
+  "title": "Bubble Plot of Population over CO2 emissions over Different Countries in Year 2020",
+  "data": {"url": "https://raw.githubusercontent.com/regantan/FIT3179/main/scatter_plot/data/co2_emissions_2010_2020.csv"},
   "width": 800,
   "height": 500,
-  "layer": [
-    {
-      "encoding": {
-        "x": {
-          "field": "Schooling (years)",
-          "type": "quantitative",
-          "scale": {"domain": [0, 21]},
-          "axis": {"tickCount": 5, "title": "Schooling (years)"}
-        },
-        "y": {
-          "field": "BMI",
-          "type": "quantitative",
-          "scale": {"domain": [0,80]},
-          "axis": {"tickCount": 5, "title": "BMI"}
-        },
-        "tooltip":[
-          {"field": "Country", "type": "nominal"},
-          {"field": "Year", "type": "ordinal"},
-          {"field": "Schooling (years)", "type": "quantitative", "format": ".2f"},
-          {"field": "BMI", "type": "quantitative", "format": ".2f"}
-        ]
-      },
-      "layer": [
-        {
-          "mark": {
-            "type": "line",
-            "size": 4,
-            "color": "lightslategray",
-            "strokeCap": "round"
-          },
-          "encoding": {
-            "detail": {"field": "Country"},
-            "order": {"field": "Year"},
-            "opacity": {
-              "condition": {
-                "test": {"or": [
-                  {"param": "hovered", "empty": false},
-                  {"param": "clicked", "empty": false}
-                ]},
-                "value": 0.8
-              },
-              "value": 0
-            }
+  "params": [
+      {
+          "name": "Continent_selection",
+          "bind": {
+              "input": "select",
+              "options": [
+              null,
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+              ],
+              "labels":[
+              "Show All",
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+              ],
+              "name": "Continent Selection: "
           }
-        },
-        {
-          "params": [
-            {
-              "name": "Year",
-              "value": [{"Year": 2000}],
-              "select": {
-                "type": "point",
-                "fields": ["Year"]
-              },
-              "bind": {
-                "name": "Year",
-                "input": "range",
-                "min": 2000, "max": 2015, "step": 1
-              }
-            },
-            {
-              "name": "hovered",
-              "select": {
-                "type": "point",
-                "fields": ["Country"],
-                "toggle": false,
-                "on": "mouseover"
-              }
-            },
-            {
-              "name": "clicked",
-              "select": {"type": "point", "fields": ["Country"]}
-            }
-          ],
-          "transform": [{"filter": {"param": "Year"}}],
-          "mark": {"type": "circle", "size": 100, "opacity": 0.9}
-        },
-        {
-          "transform": [
-            {
-              "filter": {
-                "and": [
-                  {"param": "Year"},
-                  {"or": [
-                    {"param": "clicked", "empty": false},
-                    {"param": "hovered", "empty": false}
-                  ]}
-                ]
-              }
-            }
-          ],
-          "mark": {
-            "type": "text",
-            "yOffset": -12,
-            "fontSize": 12,
-            "fontWeight": "bold"
-          },
-          "encoding": {
-            "text": {"field": "Country"}
-          }
-        },
-        {
-          "transform": [
-            {"filter": {"param": "hovered", "empty": false}},
-            {"filter": {"not": {"param": "Year"}}}
-          ],
-          "layer": [
-            {
-              "mark": {
-                "type": "text",
-                "yOffset": -12,
-                "fontSize": 12,
-                "color": "gray"
-              },
-              "encoding": {"text": {"field": "Year"}}
-            },
-            {"mark": {"type": "circle", "color": "gray"}}
-          ]
-        }
-      ]
-    },
-    {
-      "mark": {"type": "text", "color": "black", "fontSize": 13, "fontStyle": "italic",
-               "dx": 150, "xOffset": 250, "dy": -175, "align": "left"
-      },
-      "encoding": {
-        "text": {"value": ["Australia had constantly","be the country that had","the highest average","schooling duration over","the 16 years."]},
-          "opacity": {
-              "condition": {
-                  "test": "datum.Country == 'Australia' && datum.Year == 2000",
-                  "value": 1
-              },
-              "value": 0
-          }
-        }
       },
       {
-        "mark": {"type": "text", "color": "black", "fontSize": 13, "fontStyle": "italic",
-                 "dx": -150, "xOffset": -215, "dy": -150, "align": "left"
-        },
-        "encoding": {
-            "text": {"value": ["The average schooling duration","worldwide had been gradually", "increasing from Year 2000 to 2015."]},
-            "opacity": {
-                "condition": {
-                    "test": "datum.Country == 'Kiribati' && datum.Year == 2000",
-                    "value": 1
-                },
-                "value": 0
-            }
+          "name": "Area_Above",
+          "value": 0,
+          "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 10000000,
+          "step": 100,
+          "name": "Minimum Area: "
           }
-        }
+      }
+          
+  ],  
+  "transform": [
+      {"filter": "datum.co2_emissions > 0"},
+      {"filter": "datum.Year == 2020"},
+      {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},        
+      {"filter": "datum.Area > Area_Above"},
+      {
+          "calculate": "datum.co2_emissions/100000",
+          "as": "CO2 Emissions (in 100,000s)"
+      }
+  ],   
+  "encoding": {
+      "x": {
+          "field": "Population(2022)", 
+          "type": "quantitative", 
+          "scale": {"type": "log", "domain": [10000, 10000000000]},
+          "axis": {"tickCount": 5, "title": "Population (2022)"}
+      },
+      "y": {
+          "field": "CO2 Emissions (in 100,000s)", 
+          "type": "quantitative", 
+          "scale": {"type": "log", "domain": [1, 10000000]},
+          "axis": {"tickCount": 6, "title": "CO2 Emissions (in 100,000s) Tons"}
+      }
+  },
+  "layer": [
+      {
+          "mark": {"type": "circle", "tooltip": true},
+          "encoding": {
+              "color": {
+                  "field": "Continent",
+                  "type": "nominal",
+                  "scale": {
+                  "domain": [
+                  "North America",
+                  "South America",
+                  "Europe",
+                  "Africa",
+                  "Asia",
+                  "Oceania"
+                  ],
+                  "range": [
+                  "#e41a1c",
+                  "#984ea3",
+                  "#ff7f00",
+                  "#a6cee3",
+                  "#377eb8",
+                  "#a65628"
+                  ]
+                  }
+              },
+              "opacity": {"value": 0.6},
+              "size": {
+                  "field": "Area",
+                  "type": "quantitative",
+                  "scale": {
+                      "type": "threshold",
+                      "domain": [1000, 100000, 500000, 1000000, 5000000],
+                      "range": [10, 50, 150, 200, 300, 400]
+                      },
+                      "legend": {"format": ".1s"}                        
+              },
+              "tooltip": [
+                  {"field": "Country", "type": "nominal"},
+                  {"field": "Continent", "type": "nominal"},
+                  {"field": "Year", "type": "ordinal"},
+                  {"field": "Area", "type": "quantitative", "format": ".2f"},
+                  {"field": "Population(2022)", "type": "quantitative", "format": ".2f", "title": "Population (2022)"},
+                  {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".2f", "title": "CO2 Emissions in 100,000s"}  
+              ]
+          }
+      },
+      {
+          "mark": {
+              "type": "text",
+              "align": "right",
+              "baseline": "middle",
+              "dx": -12,
+              "fontSize": 11.5,
+              "fontStyle": "italic"
+          },
+          "encoding": {
+              "text": {"field": "Country", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                  "condition": {
+                      "test": "datum['Country'] == 'China' || datum['Country'] == 'Brazil' || datum['Country'] == 'Australia' || datum['Country'] == 'Malaysia' || datum['Country'] == 'Croatia' || datum['Country'] == 'Greenland' || datum['Country'] == 'Maldives' || datum['Country'] == 'Nigeria'",
+                      "value": 1
+                  },
+                  "value": 0
+                  },
+              "tooltip": [
+                  {"field": "Country", "type": "nominal"},
+                  {"field": "Continent", "type": "nominal"},
+                  {"field": "Year", "type": "ordinal"},
+                  {"field": "Area", "type": "quantitative", "format": ".2f"},
+                  {"field": "Population(2022)", "type": "quantitative", "format": ".2f", "title": "Population (2022)"},
+                  {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".2f", "title": "CO2 Emissions in 100,000s"}  
+              ]    
+          }
+      }
   ]
 }
