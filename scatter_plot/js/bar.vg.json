@@ -54,7 +54,7 @@
             "encoding": {
                 "text": {"value": ["North America is", "the highest emitter of CO2", "from 2010 to 2020."]},
                 "color": {"value": "black"},
-                "opacity": {"value": 0.01}
+                "opacity": {"value": 0.0075}
             }
         }
     ]
