@@ -42,7 +42,7 @@
                 },
                 "tooltip": [
                     {"field": "Continent", "type": "nominal"},
-                    {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative"}
+                    {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".2f"}
                 ]
             }
         },
