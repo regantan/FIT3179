@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/regantan/FIT3179/main/scatter_plot/data/co2_emissions_2010_2020.csv"},
+    "width": "container",
+    "params": [
+        {
+            "name": "Year_selection",
+            "value": 2010,
+            "bind": {
+                "input": "range",
+                "min": 2010,
+                "max": 2020,
+                "step": 1,
+                "name": "Year: "
+            }
+        }
+    ],
+    "transform": [
+        {"filter": "datum.Year == Year_selection"},
+        {
+            "calculate": "datum.co2_emissions/100000",
+            "as": "CO2 Emissions (in 100,000s)"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {"type": "bar", "tooltip": true},
+            "encoding": {
+                "y": {
+                    "field": "Continent",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "CO2 Emissions (in 100,000s)",
+                    "aggregate": "sum",
+                    "type": "quantitative",
+                    "scale": {"domain": [0, 5000000]},
+                    "axis": {
+                        "tickCount": 6,
+                        "title": "CO2 Emissions (in 100,000s)"
+                    }
+                },
+                "tooltip": [
+                    {"field": "Continent", "type": "nominal"},
+                    {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative"}
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text", "color": "black", "fontSize": 10, "fontStyle": "italic",
+                "dx": 0, "xOffset": 105, "dy": -35, "align": "left"
+            },
+            "encoding": {
+                "text": {"value": ["North America is", "the highest emitter of CO2", "from 2010 to 2020."]},
+                "color": {"value": "black"},
+                "opacity": {"value": 0.01}
+            }
+        }
+    ]
+}
