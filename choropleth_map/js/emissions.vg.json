@@ -5,7 +5,7 @@
   "params": [
     {
       "name": "Year_selection",
-      "value": 2000,
+      "value": 2015,
       "bind": {
         "input": "range",
         "min": 2010,
@@ -74,27 +74,25 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/js/ne_110m.json",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/data/co2_emissions_1950_2020.csv"
       },
       "transform": [
         {
-          "lookup": "properties.SOVEREIGNT",
+          "lookup": "Country",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/data/country_emissions.csv"
+              "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/js/ne_110m.json",
+              "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
             },
-            "key": "Country",
-            "fields": ["emission_capita"]
-          }
+            "key": "properties.SOVEREIGNT"
+          },
+          "as": "geo"
         },
-        {
-          "calculate": "datum.emission_capita",
-          "as": "emission_capita"
-        }
+        {"filter": "datum.Year == Year_selection"}
       ],
       "mark": {"type": "geoshape"},
       "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
         "color": {
           "field": "emission_capita",
           "title": "CO2 Emission per Capita (Tons)",
