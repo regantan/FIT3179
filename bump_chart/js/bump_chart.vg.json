@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
+    "padding": {"left": 10},
+    "width": 500,
+    "height": 380,
+    "data": {"url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/data/co2_emissions_1950_2020.json"},
+    "params": [
+        { "name": "Top_n_countries", "value": 5 ,
+            "bind": {"input": "range", "min": 1, "max": 10, "step": 1, "name": "Top n countries: "}
+        }
+    ],
+
+    "transform": [
+    {"filter": "datum.Year > 2009"},    
+    {
+    "sort": [
+        {"field": "emission_capita", "order": "descending"}
+        ],
+        "window": [{
+            "op": "rank",
+            "as": "rank"
+        }],
+        "groupby": [ "Year"]
+        },
+            { "filter": "datum.rank <= Top_n_countries" }
+        ],
+
+        "encoding": {
+        "x": {  "field": "Year",
+            "type": "ordinal" ,
+            "sort": [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020]  ,
+            "axis": { "labelAngle": 0 , "labelFontSize": 12 , "titleFontSize": 14},
+            "title": "Year"
+            } ,
+        "y": {  "field": "rank",
+                "type": "quantitative",
+                "sort": "descending",
+                "scale": {"domain": [0.5, {"expr": "Top_n_countries+0.5"} ]},
+                "axis": { "labelAngle": 0 , "labelFontSize": 12 ,
+                        "tickMinStep": 1 ,
+                        "tickCount": {"expr": "Top_n_countries"},
+                        "titleFontSize": 14 },
+                "title":  "Ranking based on CO2 Emissions per Capita"
+            } ,
+        "tooltip": [
+            {"field": "Country", "type": "nominal"}, 
+            {"field": "Year", "type": "ordinal"},
+            {"field": "emission_capita", "type": "quantitative", "title": "CO2 per Capita (Tons)", "format": ".2f"}
+        ]
+        } ,
+
+    "layer": [
+        {
+
+        "mark": {"type": "line", "interpolate": "monotone" },
+        "encoding": {
+            "color": { 
+                "field": "Country",
+                "scale" : {
+                    "domain": ["Estonia","United States of America","United Kingdom","Luxembourg","Germany","Belgium","Trinidad and Tobago","Canada","Ukraine","Russia","Brunei"],
+                    "range": ["#0570b0","#3690c0","#e6550d","#fd8d3c","#fdbe85","lightgray","lightgray","lightgray","lightgray","lightgray","lightgray"]
+                }
+            } ,
+        "size":{
+            "condition":  {"param": "sel_country", "empty": false, "value": 5},
+            "value": 1
+        }
+        }
+    },
+    {
+    "params": [
+        { "name": "sel_country", "select": {"type": "point" ,  "on": "click",  "fields": ["Country"]},
+        "bind": "legend"
+        }
+    ],
+        "mark": {"type" :"tick", "thickness": 5 },
+        "encoding": {
+            "color": {
+            "condition":  {"param": "sel_country", "empty": false, "value": "darkgrey"} ,
+            "field": "Country",
+            "title": ["Country",""]
+        }
+        }
+
+    }
+]
+
+}

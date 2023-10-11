@@ -28,6 +28,7 @@
 
         <div class="pure-g">
             <div class="pure-u-1-2" id="choropleth_map"></div>
+            <div class="pure-u-1-2" id="bump_chart"></div>
         </div>
 
         <div class="pure-g">
@@ -70,6 +71,13 @@
 
         var spec2 = "scatter_plot/js/scatter.vg.json";
         vegaEmbed('#scatter_plot', spec2, { "actions": false }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+
+        var spec2 = "bump_chart/js/bump_chart.vg.json";
+        vegaEmbed('#bump_chart', spec2, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
