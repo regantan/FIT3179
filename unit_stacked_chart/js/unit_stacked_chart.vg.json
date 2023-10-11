@@ -15,8 +15,8 @@
           "Asia",
           "Europe",
           "North America",
-          "South America",
-          "Australia"
+          "Australia",
+          "South America"          
         ]
       },
       "y": {"field": "Y", "sort": "descending", "type": "ordinal"}
@@ -130,7 +130,7 @@
           "text": {"value": "29"},
           "color": {"value": "#3690c0"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Afghanistan'", "value": 1},
+            "condition": {"test": "datum.Country == 'Yemen'", "value": 1},
             "value": 0
           }
         }
@@ -148,7 +148,7 @@
           "text": {"value": ":"},
           "color": {"value": "black"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Afghanistan'", "value": 1},
+            "condition": {"test": "datum.Country == 'Yemen'", "value": 1},
             "value": 0
           }
         }
@@ -167,7 +167,7 @@
           "text": {"value": "19"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Afghanistan'", "value": 1},
+            "condition": {"test": "datum.Country == 'Yemen'", "value": 1},
             "value": 0
           }
         }
@@ -186,7 +186,7 @@
           "text": {"value": "5"},
           "color": {"value": "#3690c0"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Australia'", "value": 1},
+            "condition": {"test": "datum.Country == 'Montenegro'", "value": 1},
             "value": 0
           }
         }
@@ -204,7 +204,7 @@
           "text": {"value": ":"},
           "color": {"value": "black"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Australia'", "value": 1},
+            "condition": {"test": "datum.Country == 'Montenegro'", "value": 1},
             "value": 0
           }
         }
@@ -223,7 +223,7 @@
           "text": {"value": "4"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Australia'", "value": 1},
+            "condition": {"test": "datum.Country == 'Montenegro'", "value": 1},
             "value": 0
           }
         }
@@ -242,7 +242,7 @@
           "text": {"value": "37"},
           "color": {"value": "#3690c0"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Albania'", "value": 1},
+            "condition": {"test": "datum.Country == 'Saint Vincent and the Grenadines'", "value": 1},
             "value": 0
           }
         }
@@ -260,7 +260,7 @@
           "text": {"value": ":"},
           "color": {"value": "black"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Albania'", "value": 1},
+            "condition": {"test": "datum.Country == 'Saint Vincent and the Grenadines'", "value": 1},
             "value": 0
           }
         }
@@ -279,7 +279,7 @@
           "text": {"value": "1"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Albania'", "value": 1},
+            "condition": {"test": "datum.Country == 'Saint Vincent and the Grenadines'", "value": 1},
             "value": 0
           }
         }
@@ -299,7 +299,7 @@
           "color": {"value": "#3690c0"},
           "opacity": {
             "condition": {
-              "test": "datum.Country == 'Antigua and Barbuda'",
+              "test": "datum.Country == 'Uruguay'",
               "value": 1
             },
             "value": 0
@@ -320,7 +320,7 @@
           "color": {"value": "black"},
           "opacity": {
             "condition": {
-              "test": "datum.Country == 'Antigua and Barbuda'",
+              "test": "datum.Country == 'Uruguay'",
               "value": 1
             },
             "value": 0
@@ -342,7 +342,7 @@
           "color": {"value": "#fd8d3c"},
           "opacity": {
             "condition": {
-              "test": "datum.Country == 'Antigua and Barbuda'",
+              "test": "datum.Country == 'Uruguay'",
               "value": 1
             },
             "value": 0
@@ -363,7 +363,7 @@
           "text": {"value": "10"},
           "color": {"value": "#3690c0"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Argentina'", "value": 1},
+            "condition": {"test": "datum.Country == 'Vanuatu'", "value": 1},
             "value": 0
           }
         }
@@ -381,7 +381,7 @@
           "text": {"value": ":"},
           "color": {"value": "black"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Argentina'", "value": 1},
+            "condition": {"test": "datum.Country == 'Vanuatu'", "value": 1},
             "value": 0
           }
         }
@@ -400,7 +400,7 @@
           "text": {"value": "2"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
-            "condition": {"test": "datum.Country == 'Argentina'", "value": 1},
+            "condition": {"test": "datum.Country == 'Vanuatu'", "value": 1},
             "value": 0
           }
         }
