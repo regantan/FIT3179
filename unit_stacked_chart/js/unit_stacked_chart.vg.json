@@ -1,0 +1,410 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/unit_stacked_chart/data/co2_emissions_2020.csv"
+    },
+    "width": 500,
+    "height": 400,
+    "transform": [{"calculate": "pad(datum.group_id, 3, '0', 'left')", "as": "Y"}],
+    "encoding": {
+      "x": {
+        "field": "Continent",
+        "type": "nominal",
+        "sort": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "South America",
+          "Australia"
+        ]
+      },
+      "y": {"field": "Y", "sort": "descending", "type": "ordinal"}
+    },
+    "layer": [
+      {
+        "mark": {"type": "rect", "cornerRadius": 10, "strokeMiterLimit": 10},
+        "transform": [
+          {"calculate": "pad(datum.group_id, 3, '0', 'left')", "as": "Y"}
+        ],
+        "encoding": {
+          "x": {
+            "field": "Continent",
+            "type": "nominal",
+            "axis": {"labelAngle": 0},
+            "title": "Continent",
+            "sort": [
+              "Africa",
+              "Asia",
+              "Europe",
+              "North America",
+              "South America",
+              "Australia"
+            ]
+          },
+          "y": {
+            "field": "Y",
+            "sort": "descending",
+            "type": "ordinal",
+            "axis": null
+          },
+          "color": {
+            "field": "result",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+              "domain": ["1", "0"],
+              "range": ["#fd8d3c", "#3690c0"]
+            }
+          },
+          "tooltip": {"field": "Country", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "xOffset": -10,
+          "yOffset": -13
+        },
+        "encoding": {
+          "text": {"value": "8"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Zimbabwe'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -13.5
+        },
+        "encoding": {
+          "text": {"value": ":"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Zimbabwe'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -13,
+          "xOffset": 12
+        },
+        "encoding": {
+          "text": {"value": "47"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Zimbabwe'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "xOffset": -12,
+          "yOffset": -8
+        },
+        "encoding": {
+          "text": {"value": "29"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Afghanistan'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8.8
+        },
+        "encoding": {
+          "text": {"value": ":"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Afghanistan'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8,
+          "xOffset": 12
+        },
+        "encoding": {
+          "text": {"value": "19"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Afghanistan'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "xOffset": -10,
+          "yOffset": -8
+        },
+        "encoding": {
+          "text": {"value": "5"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Australia'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8.8
+        },
+        "encoding": {
+          "text": {"value": ":"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Australia'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8,
+          "xOffset": 10
+        },
+        "encoding": {
+          "text": {"value": "4"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Australia'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "xOffset": -12,
+          "yOffset": -8
+        },
+        "encoding": {
+          "text": {"value": "37"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Albania'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8.8
+        },
+        "encoding": {
+          "text": {"value": ":"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Albania'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8,
+          "xOffset": 10
+        },
+        "encoding": {
+          "text": {"value": "1"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Albania'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "xOffset": -12,
+          "yOffset": -8
+        },
+        "encoding": {
+          "text": {"value": "20"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Antigua and Barbuda'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8.8
+        },
+        "encoding": {
+          "text": {"value": ":"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Antigua and Barbuda'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8,
+          "xOffset": 10
+        },
+        "encoding": {
+          "text": {"value": "1"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Antigua and Barbuda'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "xOffset": -12,
+          "yOffset": -8
+        },
+        "encoding": {
+          "text": {"value": "10"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Argentina'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8.8
+        },
+        "encoding": {
+          "text": {"value": ":"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Argentina'", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "yOffset": -8,
+          "xOffset": 10
+        },
+        "encoding": {
+          "text": {"value": "2"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Argentina'", "value": 1},
+            "value": 0
+          }
+        }
+      }
+    ],
+    "config": {"view": {"strokeOpacity": 0}}
+  }
