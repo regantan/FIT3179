@@ -5,11 +5,11 @@
     },
     "transform": [
       {
-        "stack": "emissions",
+        "stack": "emissions_id",
         "groupby": [],
         "as": [
-          "stack_count_Origin1",
-          "stack_count_Origin2"
+          "stack_count_Country1",
+          "stack_count_Country2"
         ],
         "offset": "normalize",
         "sort": [
@@ -23,12 +23,12 @@
         "window": [
           {
             "op": "min",
-            "field": "stack_count_Origin1",
+            "field": "stack_count_Country1",
             "as": "x"
           },
           {
             "op": "max",
-            "field": "stack_count_Origin2",
+            "field": "stack_count_Country2",
             "as": "x2"
           },
           {
@@ -74,7 +74,7 @@
         ]
       },
       {
-        "stack": "emissions",
+        "stack": "emissions_id",
         "groupby": [
           "Country"
         ],
@@ -85,7 +85,7 @@
         "offset": "normalize",
         "sort": [
           {
-            "field": "sesctor_id",
+            "field": "sector_id",
             "order": "ascending"
           }
         ]
@@ -122,23 +122,29 @@
           "baseline": "middle",
           "align": "center"
         },
+        "width": 700,
         "encoding": {
           "x": {
             "aggregate": "min",
             "field": "xc",
-            "title": "Country",
+            "title": null,
             "axis": {
               "orient": "top"
             }
           },
           "color": {
             "field": "Country",
+            "scale": {
+                "domain": ["China", "Japan", "UK", "US"],
+                "range": ["#3690c0","#e6550d","#fd8d3c","#fdbe85"]
+            },
             "legend": null
           },
           "text": {"field": "Country"}
         }
       },
       {
+        "height": 600,
         "layer": [
           {
             "mark": {
@@ -172,10 +178,10 @@
                   "type": "nominal"
                 },
                 {
-                  "field": "sector_id",
-                  "type": "quantitative"
+                  "field": "Sector",
+                  "type": "nominal"
                 },
-                {"field": "emissions"}
+                {"field": "emissions", "type": "quantitative", "format": ".2f", "title": "Emissions (MtCO2e)"}
               ]
             }
           },
@@ -194,12 +200,20 @@
                 "field": "yc",
                 "type": "quantitative",
                 "axis": {
-                  "title": "sector_id"
+                  "title": "Emission Sectors",
+                  "titleFontSize": 14
                 }
               },
               "text": {
-                "field": "Country",
+                "field": "Sector",
                 "type": "nominal"
+              },
+              "opacity": {
+                "condition": {
+                    "test": "datum.Country == 'UK' || datum.Country == 'Japan' || (datum.Country == 'China' && datum.sector_id == 1)",
+                    "value": 0
+                },
+                "value": 1
               }
             }
           }
