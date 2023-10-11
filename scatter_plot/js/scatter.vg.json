@@ -68,13 +68,13 @@
           "field": "Population(2022)", 
           "type": "quantitative", 
           "scale": {"type": "log", "domain": [10000, 10000000000]},
-          "axis": {"tickCount": 5, "title": "Population (2022)"}
+          "axis": {"tickCount": 5, "title": "Population (2022)", "titleFontSize": 14, "labelFontSize": 12}
       },
       "y": {
           "field": "CO2 Emissions (in 100,000s)", 
           "type": "quantitative", 
           "scale": {"type": "log", "domain": [1, 10000000]},
-          "axis": {"tickCount": 6, "title": "CO2 Emissions (in 100,000s) Tons"}
+          "axis": {"tickCount": 6, "title": "CO2 Emissions (in 100,000s) Tons", "titleFontSize": 14, "labelFontSize": 12}
       }
   },
   "layer": [

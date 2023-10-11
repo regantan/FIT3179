@@ -31,7 +31,7 @@
           "x": {
             "field": "Continent",
             "type": "nominal",
-            "axis": {"labelAngle": 0},
+            "axis": {"labelAngle": 0, "titleFontSize": 14, "labelFontSize": 12},
             "title": "Continent",
             "sort": [
               "Africa",
