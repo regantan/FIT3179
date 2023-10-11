@@ -1,21 +1,21 @@
-Country,sector_id,Sector,emissions
-UK,5,Ground Transport,104.287624
-UK,2,Industry,61.2796328
-UK,3,Power,62.905387
-UK,1,Aviation,15.86614243
-UK,4,Residential,88.431622
-US,5,Ground Transport,1486.67138
-US,2,Industry,953.19769
-US,3,Power,1436.34825
-US,1,Aviation,165.1977001
-US,4,Residential,556.161502
-Japan,5,Ground Transport,167.564757
-Japan,2,Industry,241.038573
-Japan,3,Power,516.831841
-Japan,1,Aviation,15.24070811
-Japan,4,Residential,108.409187
-China,5,Ground Transport,808.948121
-China,2,Industry,4258.21922
-China,3,Power,4656.29234
-China,1,Aviation,64.305184
-China,4,Residential,808.11008
+Country,sector_id,Sector,emissions,emissions_id
+UK,5,Ground Transport,104.287624,104
+UK,2,Industry,61.2796328,61
+UK,3,Power,62.905387,63
+UK,1,Aviation,15.86614243,16
+UK,4,Residential,88.431622,88
+US,5,Ground Transport,1486.67138,1487
+US,2,Industry,953.19769,953
+US,3,Power,1436.34825,1436
+US,1,Aviation,165.1977001,165
+US,4,Residential,556.161502,556
+Japan,5,Ground Transport,167.564757,168
+Japan,2,Industry,241.038573,241
+Japan,3,Power,516.831841,517
+Japan,1,Aviation,15.24070811,15
+Japan,4,Residential,108.409187,108
+China,5,Ground Transport,808.948121,809
+China,2,Industry,4258.21922,4258
+China,3,Power,4656.29234,4656
+China,1,Aviation,64.305184,64
+China,4,Residential,808.11008,808

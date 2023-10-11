@@ -1,0 +1,226 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/mosaic_chart/data/emissions_by_sector.csv"
+    },
+    "transform": [
+      {
+        "stack": "emissions",
+        "groupby": [],
+        "as": [
+          "stack_count_Origin1",
+          "stack_count_Origin2"
+        ],
+        "offset": "normalize",
+        "sort": [
+          {
+            "field": "Country",
+            "order": "ascending"
+          }
+        ]
+      },
+      {
+        "window": [
+          {
+            "op": "min",
+            "field": "stack_count_Origin1",
+            "as": "x"
+          },
+          {
+            "op": "max",
+            "field": "stack_count_Origin2",
+            "as": "x2"
+          },
+          {
+            "op": "dense_rank",
+            "as": "rank_sector_id"
+          },
+          {
+            "op": "distinct",
+            "field": "sector_id",
+            "as": "distinct_sector_id"
+          }
+        ],
+        "groupby": [
+          "Country"
+        ],
+        "frame": [
+          null,
+          null
+        ],
+        "sort": [
+          {
+            "field": "sector_id",
+            "order": "ascending"
+          }
+        ]
+      },
+      {
+        "window": [
+          {
+            "op": "dense_rank",
+            "as": "rank_Country"
+          }
+        ],
+        "frame": [
+          null,
+          null
+        ],
+        "sort": [
+          {
+            "field": "Country",
+            "order": "ascending"
+          }
+        ]
+      },
+      {
+        "stack": "emissions",
+        "groupby": [
+          "Country"
+        ],
+        "as": [
+          "y",
+          "y2"
+        ],
+        "offset": "normalize",
+        "sort": [
+          {
+            "field": "sesctor_id",
+            "order": "ascending"
+          }
+        ]
+      },
+      {
+        "calculate": "datum.y + (datum.rank_sector_id - 1) * datum.distinct_sector_id * 0.01 / 3",
+        "as": "ny"
+      },
+      {
+        "calculate": "datum.y2 + (datum.rank_sector_id - 1) * datum.distinct_sector_id * 0.01 / 3",
+        "as": "ny2"
+      },
+      {
+        "calculate": "datum.x + (datum.rank_Country - 1) * 0.01",
+        "as": "nx"
+      },
+      {
+        "calculate": "datum.x2 + (datum.rank_Country - 1) * 0.01",
+        "as": "nx2"
+      },
+      {
+        "calculate": "(datum.nx+datum.nx2)/2",
+        "as": "xc"
+      },
+      {
+        "calculate": "(datum.ny+datum.ny2)/2",
+        "as": "yc"
+      }
+    ],
+    "vconcat": [
+      {
+        "mark": {
+          "type": "text",
+          "baseline": "middle",
+          "align": "center"
+        },
+        "encoding": {
+          "x": {
+            "aggregate": "min",
+            "field": "xc",
+            "title": "Country",
+            "axis": {
+              "orient": "top"
+            }
+          },
+          "color": {
+            "field": "Country",
+            "legend": null
+          },
+          "text": {"field": "Country"}
+        }
+      },
+      {
+        "layer": [
+          {
+            "mark": {
+              "type": "rect"
+            },
+            "encoding": {
+              "x": {
+                "field": "nx",
+                "type": "quantitative",
+                "axis": null
+              },
+              "x2": {"field": "nx2"},
+              "y": {
+                "field": "ny",
+                "type": "quantitative"
+              },
+              "y2": {"field": "ny2"},
+              "color": {
+                "field": "Country",
+                "type": "nominal",
+                "legend": null
+              },
+              "opacity": {
+                "field": "sector_id",
+                "type": "quantitative",
+                "legend": null
+              },
+              "tooltip": [
+                {
+                  "field": "Country",
+                  "type": "nominal"
+                },
+                {
+                  "field": "sector_id",
+                  "type": "quantitative"
+                },
+                {"field": "emissions"}
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "baseline": "middle"
+            },
+            "encoding": {
+              "x": {
+                "field": "xc",
+                "type": "quantitative",
+                "axis": null
+              },
+              "y": {
+                "field": "yc",
+                "type": "quantitative",
+                "axis": {
+                  "title": "sector_id"
+                }
+              },
+              "text": {
+                "field": "Country",
+                "type": "nominal"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "resolve": {
+      "scale": {
+        "x": "shared"
+      }
+    },
+    "config": {
+      "view": {
+        "stroke": ""
+      },
+      "concat": {"spacing": 10},
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labels": false,
+        "grid": false
+      }
+    }
+  }
