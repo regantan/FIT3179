@@ -113,6 +113,22 @@
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/data/Continents.csv"
+      },
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "fontWeight": "bolder",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "Continent", "type": "nominal"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude": {"field": "Longitude", "type": "quantitative"}
+      }
     }
   ]
 }
