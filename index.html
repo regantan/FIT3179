@@ -36,7 +36,9 @@
             <div class="pure-u-1-2" id="scatter_plot"></div>
         </div>
 
-
+        <div class="pure-g">
+            <div class="pure-u-1-2" id="mosaic_chart"></div>
+        </div>
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
@@ -75,5 +77,12 @@
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
-    
+    <script type="text/javascript">
+
+        var spec2 = "mosaic_chart/js/mosaic_chart.vg.json";
+        vegaEmbed('#mosaic_chart', spec2, { "actions": false }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
 </html>
