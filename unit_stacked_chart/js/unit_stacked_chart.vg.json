@@ -31,7 +31,7 @@
           "x": {
             "field": "Continent",
             "type": "nominal",
-            "axis": {"labelAngle": 0, "titleFontSize": 14, "labelFontSize": 12},
+            "axis": {"labelAngle": 0},
             "title": "Continent",
             "sort": [
               "Africa",
@@ -71,7 +71,7 @@
           "yOffset": -13
         },
         "encoding": {
-          "text": {"value": "8"},
+          "text": {"value": "50"},
           "color": {"value": "#3690c0"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Zimbabwe'", "value": 1},
@@ -108,7 +108,7 @@
           "xOffset": 12
         },
         "encoding": {
-          "text": {"value": "47"},
+          "text": {"value": "2"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Zimbabwe'", "value": 1},
@@ -127,7 +127,7 @@
           "yOffset": -8
         },
         "encoding": {
-          "text": {"value": "29"},
+          "text": {"value": "32"},
           "color": {"value": "#3690c0"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Yemen'", "value": 1},
@@ -164,7 +164,7 @@
           "xOffset": 12
         },
         "encoding": {
-          "text": {"value": "19"},
+          "text": {"value": "18"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Yemen'", "value": 1},
@@ -220,7 +220,7 @@
           "xOffset": 10
         },
         "encoding": {
-          "text": {"value": "4"},
+          "text": {"value": "34"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Montenegro'", "value": 1},
@@ -239,7 +239,7 @@
           "yOffset": -8
         },
         "encoding": {
-          "text": {"value": "37"},
+          "text": {"value": "20"},
           "color": {"value": "#3690c0"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Saint Vincent and the Grenadines'", "value": 1},
@@ -276,7 +276,7 @@
           "xOffset": 10
         },
         "encoding": {
-          "text": {"value": "1"},
+          "text": {"value": "7"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Saint Vincent and the Grenadines'", "value": 1},
@@ -295,7 +295,7 @@
           "yOffset": -8
         },
         "encoding": {
-          "text": {"value": "20"},
+          "text": {"value": "12"},
           "color": {"value": "#3690c0"},
           "opacity": {
             "condition": {
@@ -397,7 +397,7 @@
           "xOffset": 10
         },
         "encoding": {
-          "text": {"value": "2"},
+          "text": {"value": "4"},
           "color": {"value": "#fd8d3c"},
           "opacity": {
             "condition": {"test": "datum.Country == 'Vanuatu'", "value": 1},

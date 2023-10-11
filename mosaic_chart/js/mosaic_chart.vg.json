@@ -200,8 +200,7 @@
                 "field": "yc",
                 "type": "quantitative",
                 "axis": {
-                  "title": "Emission Sectors",
-                  "titleFontSize": 14
+                  "title": "Emission Sectors"
                 }
               },
               "text": {

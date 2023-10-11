@@ -9,7 +9,7 @@
   "params": [
     {
       "name": "Year_selection",
-      "value": 1950,
+      "value": 2010,
       "bind": {
         "input": "range",
         "min": 1950,

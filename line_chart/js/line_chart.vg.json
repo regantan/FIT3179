@@ -16,7 +16,7 @@
                     "field": "Year",
                     "type": "temporal",
                     "scale": {"domain": {"param": "brush"}},
-                    "axis": {"title": "Year"}
+                    "axis": {"title": ""}
                   },
                   "y": {
                     "field": "aus_emission",
@@ -28,8 +28,8 @@
                   {
                     "mark": {
                       "type": "area",
-                      "line": {"color": "darkblue"},
-                      "point": {"color": "darkblue"},
+                      "line": {"color": "#3690c0"},
+                      "point": {"color": "#3690c0"},
                       "color": {
                         "x1": 1,
                         "y1": 1,
@@ -56,7 +56,7 @@
                         "type": "quantitative",
                         "format": ".1f"
                       },
-                      "color": {"value": "darkblue"},
+                      "color": {"value": "#3690c0"},
                       "opacity": {
                         "condition": [
                           {
@@ -81,7 +81,7 @@
                         "type": "quantitative",
                         "format": ".1f"
                       },
-                      "color": {"value": "darkblue"},
+                      "color": {"value": "#3690c0"},
                       "opacity": {
                         "condition": [
                           {
@@ -107,7 +107,7 @@
                         "type": "quantitative",
                         "format": ".1f"
                       },
-                      "color": {"value": "darkblue"},
+                      "color": {"value": "#3690c0"},
                       "opacity": {
                         "condition": [
                           {
@@ -122,7 +122,7 @@
                 ]
               },
               {
-                "mark": {"type": "point", "color": "darkblue"},
+                "mark": {"type": "point", "color": "#3690c0"},
                 "encoding": {
                   "x": {"field": "Year", "type": "temporal"},
                   "y": {
@@ -147,7 +147,7 @@
                 "field": "Year",
                 "type": "temporal",
                 "scale": {"domain": {"param": "brush"}},
-                "axis": {"title": "Year"}
+                "axis": {"title": ""}
               },
               "y": {
                 "field": "my_emission",
@@ -163,7 +163,7 @@
                   "fontWeight": "bold",
                   "baseline": "top",
                   "align": "center",
-                  "color": "darkblue",
+                  "color": "#3690c0",
                   "dx": 16,
                   "dy": 13
                 },
@@ -173,11 +173,11 @@
                     "type": "quantitative",
                     "axis": {"title": "Amount"}
                   },
-                  "text": {"value": ["Exponentially increasing"]},
+                  "text": {"value": ["Exponentially Increasing"]},
                   "opacity": {
                     "condition": [
                       {
-                        "test": "datum['aus_emission'] == 237.895459",
+                        "test": "datum['aus_emission'] == 288.0667055",
                         "value": 1
                       }
                     ],
@@ -188,8 +188,8 @@
               {
                 "mark": {
                   "type": "area",
-                  "line": {"color": "#d33434"},
-                  "point": {"color": "#950000"},
+                  "line": {"color": "#fd8d3c"},
+                  "point": {"color": "#fd8d3c"},
                   "color": {
                     "x1": 1,
                     "y1": 1,
@@ -198,7 +198,7 @@
                     "gradient": "linear",
                     "stops": [
                       {"offset": 0, "color": "white"},
-                      {"offset": 1, "color": "#ff522f"}
+                      {"offset": 1, "color": "#fd8d3c"}
                     ]
                   }
                 }
@@ -216,7 +216,7 @@
                     "type": "quantitative",
                     "format": ".1f"
                   },
-                  "color": {"value": "#950000"},
+                  "color": {"value": "#fd8d3c"},
                   "opacity": {
                     "condition": [
                       {
@@ -241,7 +241,7 @@
                     "type": "quantitative",
                     "format": ".1f"
                   },
-                  "color": {"value": "#950000"},
+                  "color": {"value": "#fd8d3c"},
                   "opacity": {
                     "condition": [
                       {
@@ -267,7 +267,7 @@
                     "type": "quantitative",
                     "format": ".1f"
                   },
-                  "color": {"value": "#950000"},
+                  "color": {"value": "#fd8d3c"},
                   "opacity": {
                     "condition": [
                       {
@@ -280,13 +280,13 @@
                 }
               },
               {
-                "mark": {"type": "point", "color": "#950000"},
+                "mark": {"type": "point", "color": "#fd8d3c"},
                 "encoding": {
                   "x": {
                     "field": "Year",
                     "type": "temporal",
                     "scale": {"domain": {"param": "brush"}},
-                    "axis": {"title": "Year"}
+                    "axis": {"title": ""}
                   },
                   "y": {
                     "field": "my_emission",
@@ -310,16 +310,16 @@
                   "fontWeight": "bold",
                   "baseline": "top",
                   "align": "center",
-                  "color": "#950000",
+                  "color": "#fd8d3c",
                   "dx": 18,
-                  "dy": 13
+                  "dy": -35
                 },
                 "encoding": {
-                  "text": {"value": ["Constantly decreasing"]},
+                  "text": {"value": ["Steadily Increasing"]},
                   "opacity": {
                     "condition": [
                       {
-                        "test": "datum['my_emission'] == 17.54802018",
+                        "test": "datum['my_emission'] == 24.2720617",
                         "value": 1
                       }
                     ],
@@ -336,7 +336,7 @@
         "height": 60,
         "layer": [
           {
-            "mark": {"type": "line", "color": "darkblue"},
+            "mark": {"type": "line", "color": "#3690c0"},
             "params": [
               {
                 "name": "brush",
@@ -354,9 +354,9 @@
             }
           },
           {
-            "mark": {"type": "line", "color": "#d33434"},
+            "mark": {"type": "line", "color": "#fd8d3c"},
             "encoding": {
-              "x": {"field": "Year", "type": "temporal", "title": ""},
+              "x": {"field": "Year", "type": "temporal", "title": "Year"},
               "y": {
                 "field": "my_emission",
                 "type": "quantitative",
