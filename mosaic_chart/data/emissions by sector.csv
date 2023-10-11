@@ -1,0 +1,21 @@
+Country,Sector ,emissions
+UK,Ground Transport,104.287624
+UK,Industry,61.2796328
+UK,Power,62.905387
+UK,Aviation,15.86614243
+UK,Residential,88.431622
+US,Ground Transport,1486.67138
+US,Industry,953.19769
+US,Power,1436.34825
+US,Aviation,165.1977001
+US,Residential,556.161502
+Japan,Ground Transport,167.564757
+Japan,Industry,241.038573
+Japan,Power,516.831841
+Japan,Aviation,15.24070811
+Japan,Residential,108.409187
+China,Ground Transport,808.948121
+China,Industry,4258.21922
+China,Power,4656.29234
+China,Aviation,64.305184
+China,Residential,808.11008
