@@ -82,7 +82,29 @@
         }
         }
 
-    }
+    },
+    {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 11,
+          "baseline": "bottom",
+          "align": "left",
+          "dx": 5,
+          "dy": -8
+        },
+        "encoding": {
+          "text": {"value": "Highest CO2 Emission per Capita for 9 years"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Estonia' && datum.Year == 2010",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      }
 ]
 
 }
