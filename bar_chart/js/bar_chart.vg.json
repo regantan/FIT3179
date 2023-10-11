@@ -1,0 +1,108 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Vega-Lite version of bar chart from https://observablehq.com/@d3/learn-d3-scales.",
+    "width": 400,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/bar_chart/data/co2_emissions_2020.csv"
+    },
+    "transform": [
+      {
+        "joinaggregate": [
+          {"op": "mean", "field": "average", "as": "AverageRating"}
+        ]
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "emission_capita",
+        "type": "quantitative",
+        "title": "CO2 Emission per Capita (Tons)"
+      },
+      "y": {
+        "field": "Country",
+        "type": "nominal",
+        "sort": [
+          "Puerto Rico",
+          "Burundi",
+          "Chad",
+          "Niger",
+          "Somalia",
+          "Central African Republic",
+          "Rwanda",
+          "Ethiopia",
+          "Uganda",
+          "Malawi",
+          "Russia",
+          "Brunei",
+          "Canada",
+          "Trinidad and Tobago",
+          "Belgium",
+          "Germany",
+          "United Kingdom",
+          "Luxembourg",
+          "Luxembourg",
+          "United States of America"
+        ]
+      }
+    },
+    "layer": [
+      {
+        "mark": {"type": "bar", "cornerRadiusEnd": 5.5},
+        "encoding": {
+          "color": {
+            "condition": {
+              "test": "datum['emission_capita'] >= datum.average",
+              "value": "#3690c0"
+            },
+            "value": "#fd8d3c"
+          }
+        }
+      },
+      {
+        "mark": {"type": "text", "align": "right", "xOffset": -4, "aria": false},
+        "encoding": {
+          "text": {
+            "field": "emission_capita",
+            "type": "quantitative",
+            "format": ".2f"
+          },
+          "color": {
+            "condition": {
+              "test": "datum['emission_capita'] >= datum.average",
+              "value": "white"
+            },
+            "value": "black"
+          }
+        }
+      },
+      {
+        "mark": {"type": "line", "color": "#1d1dc6", "size": 2.5},
+        "encoding": {
+          "x": {
+            "aggregate": "average",
+            "field": "AverageRating",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "dy": 100,
+          "yOffset": 50,
+          "xOffset": -45,
+          "fontWeight": "bold",
+          "align": "left"
+        },
+        "encoding": {
+          "text": {"value": ["World's mean: 223.69"]},
+          "color": {"value": "#1d1dc6"},
+          "opacity": {
+            "condition": {"test": "datum.Country == 'Ethiopia'", "value": 1},
+            "value": 0
+          }
+        }
+      }
+    ]
+  }
