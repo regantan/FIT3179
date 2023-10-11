@@ -103,7 +103,7 @@
         },
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
-          {"field": "emission_capita", "type": "quantitative", "title": "Emission per Capita (Tons)"}
+          {"field": "emission_capita", "type": "quantitative", "title": "Emission per Capita (Tons)", "format": ".2f"}
         ]
       }
     },
