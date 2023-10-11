@@ -1,0 +1,371 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/line_chart/data/emissions_my_aus.csv"
+    },
+    "vconcat": [
+      {
+        "width": "container",
+        "height": 290,
+        "layer": [
+          {
+            "layer": [
+              {
+                "encoding": {
+                  "x": {
+                    "field": "Year",
+                    "type": "temporal",
+                    "scale": {"domain": {"param": "brush"}},
+                    "axis": {"title": "Year"}
+                  },
+                  "y": {
+                    "field": "aus_emission",
+                    "type": "quantitative",
+                    "axis": {"title": "CO2 Emission per Capita (Tons)"}
+                  }
+                },
+                "layer": [
+                  {
+                    "mark": {
+                      "type": "area",
+                      "line": {"color": "darkblue"},
+                      "point": {"color": "darkblue"},
+                      "color": {
+                        "x1": 1,
+                        "y1": 1,
+                        "x2": 1,
+                        "y2": 0,
+                        "gradient": "linear",
+                        "stops": [
+                          {"offset": 0, "color": "white"},
+                          {"offset": 1, "color": "#3690c0"}
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "mark": {
+                      "type": "text",
+                      "baseline": "bottom",
+                      "dy": -4.6,
+                      "fontSize": 10
+                    },
+                    "encoding": {
+                      "text": {
+                        "field": "aus_emission",
+                        "type": "quantitative",
+                        "format": ".1f"
+                      },
+                      "color": {"value": "darkblue"},
+                      "opacity": {
+                        "condition": [
+                          {
+                            "test": "datum['aus_emission'] == 51.19096356 || datum['aus_emission'] == 711.9018892",
+                            "value": 0
+                          }
+                        ],
+                        "value": 1
+                      }
+                    }
+                  },
+                  {
+                    "mark": {
+                      "type": "text",
+                      "dy": -10,
+                      "align": "right",
+                      "fontSize": 10
+                    },
+                    "encoding": {
+                      "text": {
+                        "field": "aus_emission",
+                        "type": "quantitative",
+                        "format": ".1f"
+                      },
+                      "color": {"value": "darkblue"},
+                      "opacity": {
+                        "condition": [
+                          {
+                            "test": "datum['aus_emission'] == 711.9018892",
+                            "value": 1
+                          }
+                        ],
+                        "value": 0
+                      }
+                    }
+                  },
+                  {
+                    "mark": {
+                      "type": "text",
+                      "dy": -10,
+                      "dx": 1,
+                      "align": "left",
+                      "fontSize": 10
+                    },
+                    "encoding": {
+                      "text": {
+                        "field": "aus_emission",
+                        "type": "quantitative",
+                        "format": ".1f"
+                      },
+                      "color": {"value": "darkblue"},
+                      "opacity": {
+                        "condition": [
+                          {
+                            "test": "datum['aus_emission'] == 51.19096356",
+                            "value": 1
+                          }
+                        ],
+                        "value": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "mark": {"type": "point", "color": "darkblue"},
+                "encoding": {
+                  "x": {"field": "Year", "type": "temporal"},
+                  "y": {
+                    "field": "aus_emission",
+                    "type": "quantitative"
+                  },
+                  "tooltip": [
+                    {"field": "Year", "type": "temporal", "format": "%Y"},
+                    {
+                      "field": "aus_emission",
+                      "type": "quantitative",
+                      "format": ".1f"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "encoding": {
+              "x": {
+                "field": "Year",
+                "type": "temporal",
+                "scale": {"domain": {"param": "brush"}},
+                "axis": {"title": "Year"}
+              },
+              "y": {
+                "field": "my_emission",
+                "type": "quantitative",
+                "axis": {"title": "Amount"}
+              }
+            },
+            "layer": [
+              {
+                "mark": {
+                  "type": "text",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "baseline": "top",
+                  "align": "center",
+                  "color": "darkblue",
+                  "dx": 16,
+                  "dy": 13
+                },
+                "encoding": {
+                  "y": {
+                    "field": "aus_emission",
+                    "type": "quantitative",
+                    "axis": {"title": "Amount"}
+                  },
+                  "text": {"value": ["Exponentially increasing"]},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['aus_emission'] == 237.895459",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "mark": {
+                  "type": "area",
+                  "line": {"color": "#d33434"},
+                  "point": {"color": "#950000"},
+                  "color": {
+                    "x1": 1,
+                    "y1": 1,
+                    "x2": 1,
+                    "y2": 0,
+                    "gradient": "linear",
+                    "stops": [
+                      {"offset": 0, "color": "white"},
+                      {"offset": 1, "color": "#ff522f"}
+                    ]
+                  }
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "baseline": "bottom",
+                  "dy": -4.6,
+                  "fontSize": 10
+                },
+                "encoding": {
+                  "text": {
+                    "field": "my_emission",
+                    "type": "quantitative",
+                    "format": ".1f"
+                  },
+                  "color": {"value": "#950000"},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['my_emission'] == 2.035439453 || datum['my_emission'] == 178.9122511",
+                        "value": 0
+                      }
+                    ],
+                    "value": 1
+                  }
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "dy": -10,
+                  "align": "left",
+                  "fontSize": 10
+                },
+                "encoding": {
+                  "text": {
+                    "field": "my_emission",
+                    "type": "quantitative",
+                    "format": ".1f"
+                  },
+                  "color": {"value": "#950000"},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['my_emission'] == 2.035439453",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "dy": -10,
+                  "dx": 1,
+                  "align": "right",
+                  "fontSize": 10
+                },
+                "encoding": {
+                  "text": {
+                    "field": "my_emission",
+                    "type": "quantitative",
+                    "format": ".1f"
+                  },
+                  "color": {"value": "#950000"},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['my_emission'] == 178.9122511",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "mark": {"type": "point", "color": "#950000"},
+                "encoding": {
+                  "x": {
+                    "field": "Year",
+                    "type": "temporal",
+                    "scale": {"domain": {"param": "brush"}},
+                    "axis": {"title": "Year"}
+                  },
+                  "y": {
+                    "field": "my_emission",
+                    "type": "quantitative",
+                    "axis": {"title": "Amount"}
+                  },
+                  "tooltip": [
+                    {"field": "Year", "type": "temporal", "format": "%Y"},
+                    {
+                      "field": "my_emission",
+                      "type": "quantitative",
+                      "format": ".1f"
+                    }
+                  ]
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "baseline": "top",
+                  "align": "center",
+                  "color": "#950000",
+                  "dx": 18,
+                  "dy": 13
+                },
+                "encoding": {
+                  "text": {"value": ["Constantly decreasing"]},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['my_emission'] == 17.54802018",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "width": "container",
+        "height": 60,
+        "layer": [
+          {
+            "mark": {"type": "line", "color": "darkblue"},
+            "params": [
+              {
+                "name": "brush",
+                "select": {"type": "interval", "encodings": ["x"]}
+              }
+            ],
+            "encoding": {
+              "x": {"field": "Year", "type": "temporal", "title": ""},
+              "y": {
+                "field": "aus_emission",
+                "type": "quantitative",
+                "axis": {"tickCount": 3, "grid": false},
+                "title": ""
+              }
+            }
+          },
+          {
+            "mark": {"type": "line", "color": "#d33434"},
+            "encoding": {
+              "x": {"field": "Year", "type": "temporal", "title": ""},
+              "y": {
+                "field": "my_emission",
+                "type": "quantitative",
+                "axis": {"tickCount": 3, "grid": false},
+                "title": ""
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
