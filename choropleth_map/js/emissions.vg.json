@@ -2,6 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/js/ne_110m.json",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
   "params": [
     {
       "name": "Year_selection",
@@ -128,6 +132,40 @@
         "text": {"field": "Continent", "type": "nominal"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
         "longitude": {"field": "Longitude", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/data/Countries.csv"
+            },
+            "key": "name",
+            "fields": ["latitude", "longitude"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "black",
+        "fontStyle": "bold",
+        "stroke": "whitesmoke",
+        "strokeWidth": 0.015
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "properties.NAME", "type": "nominal"},
+        "opacity": {
+          "condition": {
+            "test": "datum['properties.NAME'] == 'Malaysia' || datum['properties.NAME'] == 'Japan' || datum['properties.NAME'] == 'United Kingdom'|| datum['properties.NAME'] == 'Canada'",
+            "value": 1
+          },
+          "value": 0
+        }
       }
     }
   ]
