@@ -416,7 +416,7 @@
                     "marks": [
                         {
                             "type": "text",
-                            "interactive": "false",
+                            "interactive": false,
                             "encode": {
                                 "enter": {
                                     "xc": {
