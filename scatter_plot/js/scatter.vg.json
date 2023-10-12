@@ -15,7 +15,7 @@
               "Europe",
               "Africa",
               "Asia",
-              "Oceania"
+              "Australia"
               ],
               "labels":[
               "Show All",
@@ -24,7 +24,7 @@
               "Europe",
               "Africa",
               "Asia",
-              "Oceania"
+              "Australia"
               ],
               "name": "Continent Selection: "
           }
@@ -91,7 +91,7 @@
                   "Europe",
                   "Africa",
                   "Asia",
-                  "Oceania"
+                  "Australia"
                   ],
                   "range": ["#395989","#0570b0","#b1d5e7","#fdbe85","#fd8d3c","#e6550d"]
                   }
