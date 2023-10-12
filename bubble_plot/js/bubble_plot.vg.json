@@ -50,6 +50,17 @@
         "step": 10000,
         "name": "Minimum Area: "
         }
+    },
+    {
+        "name": "Area_Below",
+        "value": 10000000,
+        "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 10000000,
+        "step": 10000,
+        "name": "Maximum Area: "
+        }
     }
           
   ],  
@@ -58,6 +69,7 @@
       {"filter": "datum.Year == Year"},
       {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},        
       {"filter": "datum.Area > Area_Above"},
+      {"filter": "datum.Area < Area_Below"},
       {
           "calculate": "datum.co2_emissions/100000",
           "as": "CO2 Emissions (in 100,000s)"
