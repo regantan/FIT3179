@@ -1,6 +1,10 @@
 :root {
     --blue: #3690c0;
     --orange: #fd8d3c;
+    --red: #ed7a7b;
+    --description-font-size: 16px;
+    --idiom-font-size: 26px;
+    --title-font: 'Gothic A1', sans-serif;
 }
 
 body *{
@@ -13,27 +17,30 @@ body *{
 
 .footer {
     font-size: 14px;
+    margin-left: 100px;
 }
 
 .page-title {
-    font-size: 35px;
-    font-weight: 500;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
-    color: var(--blue);
+    color: var(--orange);
+    font-family: var(--title-font);
 }
 
 .page-title-description {
-    font-size: 14px;
+    font-size: var(--description-font-size);
     font-weight: 300;
     margin-bottom: 20px;
     color: black;
-    padding: 0 100px ;
+    padding: 0 200px ;
 }
 
 .line-break {
     width: 100%;
-    margin: 0 10px 30px 10px;
+    margin: 0 100px 30px 100px;
     height: 10px;
     border-bottom: 1px solid lightgray;
 }
@@ -41,22 +48,23 @@ body *{
 .bi {
     width: 60px;
     height: 60px;
-    fill: var(--blue);
+    fill: var(--orange);
 }
 
 .idiom-title {
-    font-size: 25px;
+    font-size: var(--idiom-font-size);
     font-weight: 500;
     margin-top: 3px;
     color: black;
+    font-family: var(--title-font);
 }
 
 .idiom-subtitle {
-    font-size: 14px;
+    font-size: var(--description-font-size);
     font-weight: 300;
     margin-bottom: 20px;
     color: black;
-    padding: 20px 150px 0 0;
+    padding: 20px 225px 0 0;
 }
 
 .content {
@@ -65,4 +73,20 @@ body *{
 
 .idiom {
     margin-bottom: 60px;
+}
+
+.orange {
+    color: var(--orange);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.red{
+    color: var(--red);
+}
+
+.bold {
+    font-weight: 600;
 }
