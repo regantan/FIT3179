@@ -57,7 +57,10 @@
               "range": ["#fd8d3c", "#3690c0"]
             }
           },
-          "tooltip": {"field": "Country", "type": "nominal"}
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "emission_capita", "type": "quantitative", "title": "Emission Capita (Tons)", "format": ".2f"}
+          ]
         }
       },
       {
