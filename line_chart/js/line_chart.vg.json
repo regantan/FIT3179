@@ -5,8 +5,8 @@
     },
     "vconcat": [
       {
-        "width": "container",
-        "height": 290,
+        "width": 1600,
+        "height": 300,
         "layer": [
           {
             "layer": [
@@ -386,8 +386,8 @@
         ]
       },
       {
-        "width": "container",
-        "height": 60,
+        "width": 1600,
+        "height": 80,
         "layer": [
           {
             "mark": {"type": "line", "color": "#3690c0"},

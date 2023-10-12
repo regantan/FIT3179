@@ -1,53 +1,68 @@
+:root {
+    --blue: #3690c0;
+    --orange: #fd8d3c;
+}
+
 body *{
     font-family: 'Open Sans', sans-serif;
-}
-
-h1 {
-    font-weight: 900;
-}
-
-body {
-    background-color: lightgray;
-}
-
-.page {
-    background-color: white;
-    margin: auto;
-    padding: 50px;
-    padding-top: 35px;
-}
-
-.vis-container {
-    width: 100%;
-}
-
-.description h2,
-h1 {
-    margin-top: 0px;
-}
-
-.description-right {
-    padding-left: 20px;
-}
-
-.description-left {
-    padding-right: 20px;
 }
 
 .pure-g {
     margin-bottom: 40px;
 }
 
-.small-font {
+.footer {
     font-size: 14px;
 }
 
-.title {
-    font-weight: 900;
-    font-size: 15px;
-    margin: 10px 0px;
+.page-title {
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--blue);
+}
+
+.page-title-description {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: black;
+    padding: 0 100px ;
+}
+
+.line-break {
+    width: 100%;
+    margin: 0 10px 30px 10px;
+    height: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.bi {
+    width: 60px;
+    height: 60px;
+    fill: var(--blue);
+}
+
+.idiom-title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 3px;
+    color: black;
+}
+
+.idiom-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: black;
+    padding: 20px 150px 0 0;
 }
 
 .content {
-    font-size: 14px;
+    margin-left: 100px;
+}
+
+.idiom {
+    margin-bottom: 60px;
 }

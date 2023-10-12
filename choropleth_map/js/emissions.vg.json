@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 500,
+  "width": 550,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}

@@ -2,99 +2,233 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 9 Homework</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
 
-  <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css">
 
-    <!-- CSS file -->
+
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+    <title>FIT3179 Data Visualisation 2</title>
 </head>
+
 <body>
-    <div class="page">
 
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-              <h1>FIT3179 Homework 10</h1>
+    <div class="pure-g">
+            <div class="pure-u-1">
+                <div class="page-title">
+                    CO2 EMISSIONS
+                </div>
             </div>
-          </div>
 
-        <div class="pure-g">
-            <div class="pure-u-1-2" id="choropleth_map"></div>
-            <div class="pure-u-1-2" id="bump_chart"></div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-1-2" id="unit_stacked_chart"></div>
-            <div class="pure-u-1-2" id="bubble_plot"></div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-1-2" id="mosaic_chart"></div>
-            <div class="pure-u-1-2" id="sankey_diagram"></div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-1-1" id="line_chart"></div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-1-1 small-font">
-              <p>This visualisation is created by <a href="https://github.com/regantan/FIT3179" target="_blank">Tan Won Lun</a>. The datasource is obtained from
-                <a href="https://www.kaggle.com/datasets/moazzimalibhatti/co2-emission-by-countries-year-wise-17502022?select=CO2+emission+by+countries.csv" target=" _blank">kaggle</href>.</p>
+            <div class="pure-u-1-2">
+                <div class="page-title-description">
+                    Global CO2 emissions have been on the rise, with various sectors contributing to this increase. Key sources include the burning of oil, natural gas, and coal for energy production, cement production, flaring of natural gas, and other industrial processes. These emissions collectively exacerbate the challenge of climate change, necessitating urgent action to curb them.
+                </div>
+                <div class="page-title-description">
+                    Apart from the major industrial sectors like power generation and industry, other contributors to CO2 emissions include residential energy use, ground transportation, and aviation. Visualizations depicting these varied sources aim to raise awareness about the multifaceted nature of global CO2 emissions, underscoring the need for collective efforts to reduce them and combat climate change in the future.
+                </div>
             </div>
-          </div>
+            <div class="pure-u-1-2">
+                <div class="page-title-description">
+                    This visualisation utilised 3 dataset with spanning the years 1950 to 2020. The first dataset is the CO2 emissions by countries, which contains the CO2 emissions of 192 countries. The second dataset is the CO2 emissions by sectors, which contains the CO2 emissions of 6 sectors. The third dataset is the CO2 emissions by fuel, which contains the CO2 emissions of 5 fuels.
+                </div>
+                <div class="page-title-description">
+                    Other than that this visualisation uses CO2 Emissions per Capita in Tons as well as Metric tons of carbon dioxide equivalent or MTCO2e to represent the CO2 emissions. CO2 Emissions per Capita in Tons is the CO2 emissions divided by the population of the country. MTCO2e is the CO2 emissions multiplied by the Global Warming Potential of the gas.
+                </div>
+            </div>
+
+            <div class="line-break"></div>
+
+            <div class="content">
+                <div class="pure-u-1-2 idiom">
+                    <div class="pure-u-1-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"/>
+                        </svg>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="idiom-title">CO2 EMISSIONS OF COUNTRIES FROM YEAR 1950 - 2020</div>
+                    </div>
+                    <div class="idiom-subtitle">From the map below, we can see that over the years there has been a big increase in CO2 emissions per Capita over the years. 
+                        Most Noticably, developed countries in continents such as Europe, Australia and North America have seen the biggest increase. 
+                    </div>
+                    <div class="idiom-subtitle">You can utilise the year slider to see the change in CO2 emissions over the years.</div>
+                    <div id="choropleth_map"></div>
+                </div>
+
+                <div class="pure-u-1-2 idiom"; style="margin-bottom: -100px">
+                    <div class="pure-u-1-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+                          </svg>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="idiom-title">RANKING OF COUNTRIES WITH HIGHEST CO2 EMISSIONS OVER THE YEARS</div>
+                    </div>
+                    <div class=" idiom-subtitle">
+                        From years 2010 - 2020, the top 5 countries with the highest CO2 emissions have remained the same with the USA surpassing Estonia to be the higest emitter of CO2 emissions in the year 2020. 
+                        Even looking at the top 10 countries, there has been little change in the countries that are the highest emitters of CO2 emissions.
+                    </div>
+                    <div class="idiom-subtitle">You can utilise the Top-n countries slider to adjust how many rankings to see. Clicking on any bar of legend will highlight the changes in ranking 
+                        for that particular country. 
+                    </div>
+                    <div id="bump_chart"></div>
+                </div>
+
+                <div class="pure-u-1-2 idiom">
+                    <div class="pure-u-1-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-3-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z"/>
+                          </svg>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="idiom-title">COUNTRIES ABOVE AND BELOW THE AVERAGE CO2 EMISSIONS PER CAPITA in 2020</div>
+                    </div>
+                    <div class="idiom-subtitle">
+                        Below is a unit stacked chart to investigate the ratio of countries which are above and below the average CO2 emissions per capita in each continent in the year 2020. Bars that are in blue signifies that 
+                        the CO2 emission per capita is below the average while bars that are in red signifies that the CO2 emission per capita is above the average.
+                    </div>
+                    <div class="idiom-subtitle">
+                        Countries in Europe has the highest ratio of countries above the average CO2 emissions per capita while countries in Africa has the highest ratio of countries below the average CO2 emissions per capita.
+                        This is likely due to the fact that countries in Europe are more developed and have a higher GDP per capita compared to countries in Africa.
+                    </div>
+                    <div id="unit_stacked_chart"></div>
+                </div>
+
+                <div class="pure-u-1-2 idiom">
+                    <div class="pure-u-1-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-4-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM7.519 5.057c-.886 1.418-1.772 2.838-2.542 4.265v1.12H8.85V12h1.26v-1.559h1.007V9.334H10.11V4.002H8.176c-.218.352-.438.703-.657 1.055ZM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218Z"/>
+                          </svg>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="idiom-title">DISTRIBUTION OF POPULATION AND AREA OVER CO2 EMISSIONS</div>
+                    </div>
+                    <div class="idiom-subtitle">
+                        From the bubble chart below, we can observe that there is a positive correlation between the population and area of a country with the CO2 emissions of a country albeit some outliers include
+                        Puerto Rico.
+                    </div>
+                    <div class="idiom-subtitle" style="margin-bottom: 60px;">
+                        You can utilise the sliders and selection menu to control the year, minimum area, maximum area as well the continents.
+                    </div>
+                    <div id="bubble_plot"></div>
+                </div>
+
+                <div class="pure-u-1-2 idiom">
+                    <div class="pure-u-1-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-5-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z"/>
+                          </svg>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="idiom-title">DISTRIBUTION OF CO2 EMISSION SECTORS OF 4 MAJOR COUNTRIES</div>
+                    </div>
+                    <div class="idiom-subtitle">
+                        Below is a mosaic chart or merimekko chart of 4 major countries (China, Japan, UK, USA) and CO2 emissions by sectors in the year 2020. The emission
+                        sectors include, Ground Transport, Residential, Power, Industry and Aviation.
+                    </div>
+                    <div class="idiom-subtitle">
+                        Looking at the mosaic chart or marimekko chart, we can see that out of the 4 major countries, China, Japan and USA which are largely manufacturing countries have high CO2 emissions
+                        in sectors such as Power and Industry. Meanwhile, USA which has a poor public transport system has a high CO2 emissions in the Ground Transportation sector.
+                    </div>
+                    <div id="mosaic_chart"></div>
+                </div>
+    
+                <div class="pure-u-1-2 idiom">
+                    <div class="pure-u-1-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-6-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.21 3.855c-1.868 0-3.116 1.395-3.116 4.407 0 1.183.228 2.039.597 2.642.569.926 1.477 1.254 2.409 1.254 1.629 0 2.847-1.013 2.847-2.783 0-1.676-1.254-2.555-2.508-2.555-1.125 0-1.752.61-1.98 1.155h-.082c-.012-1.946.727-3.036 1.805-3.036.802 0 1.213.457 1.312.815h1.29c-.06-.908-.962-1.899-2.573-1.899Zm-.099 4.008c-.92 0-1.564.65-1.564 1.576 0 1.032.703 1.635 1.558 1.635.868 0 1.553-.533 1.553-1.629 0-1.06-.744-1.582-1.547-1.582Z"/>
+                          </svg>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="idiom-title">DISTRIBUTION OF CONTINENTS AND EMISSION TYPES</div>
+                    </div>
+                    <div class="idiom-subtitle">
+                        This Sankey/Alluvial diagram showcases the distribution of each continent and their CO2 emission types in the year 2020.
+                        The CO2 emission types include cement, coal, flaring, gas, oil and other. We can see that Asia is the continent with the highest CO2 emissions and burning of coal is the highest 
+                        cause of CO2 emissions in the world. 
+                    </div>
+                    <div class="idiom-subtitle" style="margin-bottom: 73px;">
+                        You can click on the bars at the most left and right to expand on the continents and the CO2 emission types respectively. You can click on Show All 
+                        afterwards to return to the main diagram.
+                    </div>
+                    <div id="sankey_diagram"></div>
+                </div>
+
+                <div class="pure-u-1-1 idiom">
+                    <div class="pure-u-1-8" style="margin-right: -100px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-7-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM5.37 5.11h3.972v.07L6.025 12H7.42l3.258-6.85V4.002H5.369v1.107Z"/>
+                          </svg>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <div class="idiom-title">CO2 EMISSION PER CAPITA OF MALAYSIA AND AUSTRALIA FROM 1960 - 2020</div>
+                    </div>
+                    <div class="idiom-subtitle">
+                        The Line chart below showcases the CO2 emissions per capita of Malaysia and Australia from 1960 - 2020. We can see that the CO2 emissions per capita of Malaysia has been on the rise steadily while 
+                        Australia has been on an exponential increase in CO2 emissions per capita signifying the development of the country at the expense of the environment.
+                    </div>
+                    <div class="idiom-subtitle">
+                        You can brush through the years by interacting with the smaller line chart below the delve deeper into the individual years. 
+                    </div>
+                    <div id="line_chart"></div>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- <div class="pure-u-1-1 footer">
+                <p>This visualisation is created by <a href="https://github.com/regantan/FIT3179" target="_blank">Tan Won Lun</a>. The datasource is obtained from
+                  <a href="https://www.kaggle.com/datasets/moazzimalibhatti/co2-emission-by-countries-year-wise-17502022?select=CO2+emission+by+countries.csv" target=" _blank">kaggle</href>.</p>
+            </div> -->
 
     </div>
 
-    <script type="text/javascript">
-        var spec2 = "choropleth_map/js/emissions.vg.json";
-        vegaEmbed('#choropleth_map', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script type="text/javascript">
-        var spec2 = "bubble_plot/js/bubble_plot.vg.json";
-        vegaEmbed('#bubble_plot', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script type="text/javascript">
-        var spec2 = "bump_chart/js/bump_chart.vg.json";
-        vegaEmbed('#bump_chart', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script type="text/javascript">
-        var spec2 = "unit_stacked_chart/js/unit_stacked_chart.vg.json";
-        vegaEmbed('#unit_stacked_chart', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script type="text/javascript">
-        var spec2 = "mosaic_chart/js/mosaic_chart.vg.json";
-        vegaEmbed('#mosaic_chart', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script type="text/javascript">
-        var spec2 = "line_chart/js/line_chart.vg.json";
-        vegaEmbed('#line_chart', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script type="text/javascript">
-        var spec2 = "sankey_diagram/js/sankey_diagram.vg.json";
-        vegaEmbed('#sankey_diagram', spec2, { "actions": false }).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
 
+<script type="text/javascript">
+        var spec1 = "choropleth_map/js/emissions.vg.json";
+        vegaEmbed('#choropleth_map', spec1, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec2 = "bubble_plot/js/bubble_plot.vg.json";
+        vegaEmbed('#bubble_plot', spec2, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec3 = "bump_chart/js/bump_chart.vg.json";
+        vegaEmbed('#bump_chart', spec3, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec4 = "unit_stacked_chart/js/unit_stacked_chart.vg.json";
+        vegaEmbed('#unit_stacked_chart', spec4, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec5 = "mosaic_chart/js/mosaic_chart.vg.json";
+        vegaEmbed('#mosaic_chart', spec5, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec6 = "line_chart/js/line_chart.vg.json";
+        vegaEmbed('#line_chart', spec6, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec7 = "sankey_diagram/js/sankey_diagram.vg.json";
+        vegaEmbed('#sankey_diagram', spec7, { "actions": true }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+</script>
+    
+</body>
 </html>

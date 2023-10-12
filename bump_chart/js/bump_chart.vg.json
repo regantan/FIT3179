@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
     "padding": {"left": 10},
-    "width": 500,
-    "height": 380,
+    "width": 550,
+    "height": 400,
     "data": {"url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/data/co2_emissions_1950_2020.json"},
     "params": [
         { "name": "Top_n_countries", "value": 5 ,
