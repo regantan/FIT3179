@@ -60,7 +60,7 @@
                       "opacity": {
                         "condition": [
                           {
-                            "test": "datum['aus_emission'] == 51.19096356 || datum['aus_emission'] == 711.9018892",
+                            "test": "datum['aus_emission'] == 78.4724711 || datum['aus_emission'] == 711.9018892",
                             "value": 0
                           }
                         ],
@@ -71,7 +71,7 @@
                   {
                     "mark": {
                       "type": "text",
-                      "dy": -10,
+                      "dy": -20,
                       "align": "right",
                       "fontSize": 10
                     },
@@ -96,7 +96,7 @@
                   {
                     "mark": {
                       "type": "text",
-                      "dy": -10,
+                      "dy": -20,
                       "dx": 1,
                       "align": "left",
                       "fontSize": 10
@@ -111,7 +111,7 @@
                       "opacity": {
                         "condition": [
                           {
-                            "test": "datum['aus_emission'] == 51.19096356",
+                            "test": "datum['aus_emission'] == 78.4724711",
                             "value": 1
                           }
                         ],
@@ -134,7 +134,8 @@
                     {
                       "field": "aus_emission",
                       "type": "quantitative",
-                      "format": ".1f"
+                      "format": ".1f",
+                      "title": "Emission per Capita (Tons)"
                     }
                   ]
                 }
@@ -156,35 +157,6 @@
               }
             },
             "layer": [
-              {
-                "mark": {
-                  "type": "text",
-                  "fontSize": 11,
-                  "fontWeight": "bold",
-                  "baseline": "top",
-                  "align": "center",
-                  "color": "#3690c0",
-                  "dx": 16,
-                  "dy": 13
-                },
-                "encoding": {
-                  "y": {
-                    "field": "aus_emission",
-                    "type": "quantitative",
-                    "axis": {"title": "Amount"}
-                  },
-                  "text": {"value": ["Exponentially Increasing"]},
-                  "opacity": {
-                    "condition": [
-                      {
-                        "test": "datum['aus_emission'] == 288.0667055",
-                        "value": 1
-                      }
-                    ],
-                    "value": 0
-                  }
-                }
-              },
               {
                 "mark": {
                   "type": "area",
@@ -220,7 +192,7 @@
                   "opacity": {
                     "condition": [
                       {
-                        "test": "datum['my_emission'] == 2.035439453 || datum['my_emission'] == 178.9122511",
+                        "test": "datum['my_emission'] == 3.650630037 || datum['my_emission'] == 178.9122511",
                         "value": 0
                       }
                     ],
@@ -245,7 +217,7 @@
                   "opacity": {
                     "condition": [
                       {
-                        "test": "datum['my_emission'] == 2.035439453",
+                        "test": "datum['my_emission'] == 3.650630037",
                         "value": 1
                       }
                     ],
@@ -256,7 +228,7 @@
               {
                 "mark": {
                   "type": "text",
-                  "dy": -10,
+                  "dy": -20,
                   "dx": 1,
                   "align": "right",
                   "fontSize": 10
@@ -298,9 +270,39 @@
                     {
                       "field": "my_emission",
                       "type": "quantitative",
-                      "format": ".1f"
+                      "format": ".1f",
+                      "title": "Emission per Capita (Tons)"
                     }
                   ]
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "baseline": "top",
+                  "align": "center",
+                  "color": "#3690c0",
+                  "dx": 16,
+                  "dy": 13
+                },
+                "encoding": {
+                  "y": {
+                    "field": "aus_emission",
+                    "type": "quantitative",
+                    "axis": {"title": "Amount"}
+                  },
+                  "text": {"value": ["Exponentially Increasing"]},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['aus_emission'] == 288.0667055",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
                 }
               },
               {
@@ -316,6 +318,58 @@
                 },
                 "encoding": {
                   "text": {"value": ["Steadily Increasing"]},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['my_emission'] == 24.2720617",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "fontSize": 12,
+                  "fontWeight": "bold",
+                  "baseline": "top",
+                  "align": "center",
+                  "color": "#fd8d3c",
+                  "dx": 18,
+                  "dy": -35
+                },
+                "encoding": {
+                  "x": {"value": 110},
+                  "y": {"value": 55},
+                  "text": {"value": ["Malaysian Emission Per Capita (Tons)"]},
+                  "opacity": {
+                    "condition": [
+                      {
+                        "test": "datum['my_emission'] == 24.2720617",
+                        "value": 1
+                      }
+                    ],
+                    "value": 0
+                  }
+                }
+              },
+              {
+                "mark": {
+                  "type": "text",
+                  "fontSize": 12,
+                  "fontWeight": "bold",
+                  "baseline": "top",
+                  "align": "center",
+                  "color": "#3690c0",
+                  "dx": 18,
+                  "dy": -35
+                },
+                "encoding": {
+                  "x": {"value": 110},
+                  "y": {"value": 40},
+                  "text": {"value": ["Australian Emission Per Capita (Tons)"]},
                   "opacity": {
                     "condition": [
                       {
