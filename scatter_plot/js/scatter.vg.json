@@ -111,9 +111,9 @@
                   {"field": "Country", "type": "nominal"},
                   {"field": "Continent", "type": "nominal"},
                   {"field": "Year", "type": "ordinal"},
-                  {"field": "Area", "type": "quantitative", "format": ".2f"},
-                  {"field": "Population(2022)", "type": "quantitative", "format": ".2f", "title": "Population (2022)"},
-                  {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".2f", "title": "CO2 Emissions in 100,000s"}  
+                  {"field": "Area", "type": "quantitative", "format": ".0f"},
+                  {"field": "Population(2022)", "type": "quantitative", "format": ".0f", "title": "Population (2022)"},
+                  {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".0f", "title": "CO2 Emissions in 100,000s"}  
               ]
           }
       },
@@ -140,9 +140,9 @@
                   {"field": "Country", "type": "nominal"},
                   {"field": "Continent", "type": "nominal"},
                   {"field": "Year", "type": "ordinal"},
-                  {"field": "Area", "type": "quantitative", "format": ".2f"},
-                  {"field": "Population(2022)", "type": "quantitative", "format": ".2f", "title": "Population (2022)"},
-                  {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".2f", "title": "CO2 Emissions in 100,000s"}  
+                  {"field": "Area", "type": "quantitative", "format": ".0f"},
+                  {"field": "Population(2022)", "type": "quantitative", "format": ".0f", "title": "Population (2022)"},
+                  {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".0f", "title": "CO2 Emissions in 100,000s"}  
               ]    
           }
       }
