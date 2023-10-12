@@ -284,20 +284,6 @@
             "domain": ["stk1", "stk2"]
         }
     ],
-    "axes": [
-        {
-            "orient": "bottom",
-            "scale": "x",
-            "encode": {
-                "labels": {
-                    "update": {
-                        "text": {"scale": "stackNames", "field": "value"}
-                    }
-                }
-            }
-        },
-        {"orient": "left", "scale": "y"}
-    ],
     "marks": [
         {
             "type": "path",
