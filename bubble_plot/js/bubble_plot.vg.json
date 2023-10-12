@@ -131,7 +131,7 @@
               "color": {"value": "black"},
               "opacity": {
                   "condition": {
-                      "test": "datum['Country'] == 'China' || datum['Country'] == 'Brazil' || datum['Country'] == 'Australia' || datum['Country'] == 'Malaysia' || datum['Country'] == 'Croatia' || datum['Country'] == 'Puerto Rico' || datum['Country'] == 'Maldives' || datum['Country'] == 'Nigeria'",
+                      "test": "datum['Country'] == 'Malaysia' || datum['Country'] == 'Croatia' || datum['Country'] == 'Puerto Rico' || datum['Country'] == 'Maldives' || datum['Country'] == 'Nigeria'",
                       "value": 1
                   },
                   "value": 0
@@ -145,6 +145,35 @@
                   {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".0f", "title": "CO2 Emissions in 100,000s"}  
               ]    
           }
-      }
+      },
+      {
+        "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -18,
+            "fontSize": 10,
+            "fontStyle": "italic"
+        },
+        "encoding": {
+            "text": {"field": "Country", "type": "nominal"},
+            "color": {"value": "black"},
+            "opacity": {
+                "condition": {
+                    "test": "datum['Country'] == 'China' || datum['Country'] == 'Brazil' || datum['Country'] == 'Australia'",
+                    "value": 1
+                },
+                "value": 0
+                },
+            "tooltip": [
+                {"field": "Country", "type": "nominal"},
+                {"field": "Continent", "type": "nominal"},
+                {"field": "Year", "type": "ordinal"},
+                {"field": "Area", "type": "quantitative", "format": ".0f"},
+                {"field": "Population(2022)", "type": "quantitative", "format": ".0f", "title": "Population (2022)"},
+                {"field": "CO2 Emissions (in 100,000s)", "type": "quantitative", "format": ".0f", "title": "CO2 Emissions in 100,000s"}  
+            ]    
+        }
+    }
   ]
 }
