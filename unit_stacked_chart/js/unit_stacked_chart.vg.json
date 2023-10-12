@@ -356,6 +356,76 @@
           "fontSize": 12,
           "baseline": "bottom",
           "align": "center",
+          "dy": 0,
+          "yOffset": 0,
+          "xOffset": 0
+        },
+        "encoding": {
+          "y": {"value": 0},
+          "text": {"value": "Mean: 223.69"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Uruguay'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "dy": 0,
+          "xOffset": 0
+        },
+        "encoding": {
+          "y": {"value": 15},
+          "text": {"value": "Below Mean"},
+          "color": {"value": "#3690c0"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Uruguay'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
+          "dy": 0,
+          "xOffset": 0
+        },
+        "encoding": {
+          "y": {"value": 30},
+          "text": {"value": "Above Mean"},
+          "color": {"value": "#fd8d3c"},
+          "opacity": {
+            "condition": {
+              "test": "datum.Country == 'Uruguay'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "fontSize": 12,
+          "baseline": "bottom",
+          "align": "center",
           "xOffset": -12,
           "yOffset": -8
         },
