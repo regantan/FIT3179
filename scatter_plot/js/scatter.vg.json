@@ -93,10 +93,10 @@
                   "Asia",
                   "Oceania"
                   ],
-                  "range": ["#0570b0","#3690c0","#a65628","#e6550d","#fd8d3c","#fdbe85"]
+                  "range": ["#395989","#0570b0","#b1d5e7","#fdbe85","#fd8d3c","#e6550d"]
                   }
               },
-              "opacity": {"value": 0.6},
+              "opacity": {"value": 0.8},
               "size": {
                   "field": "Area",
                   "type": "quantitative",

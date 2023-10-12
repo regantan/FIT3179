@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.0.json",
-    "width": 585,
-    "height": 400,
+    "width": 680,
+    "height": 580,
     "data": [
         {
             "name": "emission_types",
@@ -54,6 +54,30 @@
                                 "doc_count": 216.7616
                             },
                             {
+                                "key": {"stk1": "Australia", "stk2": "Coal"},
+                                "doc_count": 164.506534
+                            },
+                            {
+                                "key": {"stk1": "Australia", "stk2": "Oil"},
+                                "doc_count": 168.835014
+                            },
+                            {
+                                "key": {"stk1": "Australia", "stk2": "Gas"},
+                                "doc_count": 93.150958
+                            },
+                            {
+                                "key": {"stk1": "Australia", "stk2": "Cement"},
+                                "doc_count": 3.228703
+                            },
+                            {
+                                "key": {"stk1": "Australia", "stk2": "Flaring"},
+                                "doc_count": 18.156204
+                            },
+                            {
+                                "key": {"stk1": "Australia", "stk2": "Other"},
+                                "doc_count": 4.308389
+                            },
+                            {
                                 "key": {"stk1": "Europe", "stk2": "Coal"},
                                 "doc_count": 799.898492
                             },
@@ -100,30 +124,6 @@
                             {
                                 "key": {"stk1": "North America", "stk2": "Other"},
                                 "doc_count": 27.381025
-                            },
-                            {
-                                "key": {"stk1": "Australia", "stk2": "Coal"},
-                                "doc_count": 164.506534
-                            },
-                            {
-                                "key": {"stk1": "Australia", "stk2": "Oil"},
-                                "doc_count": 168.835014
-                            },
-                            {
-                                "key": {"stk1": "Australia", "stk2": "Gas"},
-                                "doc_count": 93.150958
-                            },
-                            {
-                                "key": {"stk1": "Australia", "stk2": "Cement"},
-                                "doc_count": 3.228703
-                            },
-                            {
-                                "key": {"stk1": "Australia", "stk2": "Flaring"},
-                                "doc_count": 18.156204
-                            },
-                            {
-                                "key": {"stk1": "Australia", "stk2": "Other"},
-                                "doc_count": 4.308389
                             },
                             {
                                 "key": {"stk1": "South America", "stk2": "Coal"},
@@ -274,7 +274,7 @@
         {
             "name": "color",
             "type": "ordinal",
-            "range": "category",
+            "range": ["#395989","#0570b0","#fdbe85","#fd8d3c","#e6550d","#b14f22","#0570b0","#e6550d","#fd8d3c","#395989","#fdbe85","#b14f22"],
             "domain": {"data": "emission_types", "fields": ["stk1", "stk2"]}
         },
         {
@@ -344,7 +344,7 @@
                     "x": {"scale": "x", "field": "stack"},
                     "y": {"field": "scaledY0"},
                     "y2": {"field": "scaledY1"},
-                    "fillOpacity": {"value": 0.6},
+                    "fillOpacity": {"value": 1},
                     "tooltip": {
                         "signal": "datum.grpId + '   ' + format(datum.total, ',.0f') + '   (' + format(datum.percentage, '.1%') + ')'"
                     }
@@ -410,7 +410,7 @@
                             "opacity": {"value": 1}
                         },
                         "hover": {
-                            "opacity": {"value": 0.7}
+                            "opacity": {"value": 1}
                         }
                     },
                     "marks": [

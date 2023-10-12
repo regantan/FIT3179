@@ -136,7 +136,7 @@
             "field": "Country",
             "scale": {
                 "domain": ["China", "Japan", "UK", "US"],
-                "range": ["#3690c0","#e6550d","#fd8d3c","#fdbe85"]
+                "range": ["#0570b0","#b1d5e7","#fd8d3c","#e6550d"]
             },
             "legend": null
           },
