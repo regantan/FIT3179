@@ -33,24 +33,32 @@
             </div>
 
             <div class="pure-u-1-2">
-                <div class="page-title-description">
-                    Global CO2 emissions have been on the <span class="bold red">rise</span>, with various sectors contributing to this increase. Key sources include the burning of <span class="bold red">oil, natural gas</span>, 
-                    and <span class="bold red">coal</span> for energy production, <span class="bold red">cement</span> production, <span class="bold red">flaring</span> of natural gas, and other industrial processes. These emissions collectively exacerbate 
-                    the challenge of <span class="bold red">climate change</span>, necessitating urgent action to curb them.
+                <div class="pure-u-1-8">
                 </div>
-                <div class="page-title-description">
-                    Apart from the major industrial sectors like <span class="bold red">power</span> generation and <span class="bold red">industry</span>, other contributors to CO2 emissions include <span class="bold red">residential</span> energy use, 
-                    <span class="bold red">ground transportation</span>, and <span class="bold red">aviation</span>. Visualizations depicting these varied sources aim to raise awareness about the multifaceted nature of global CO2 emissions, underscoring the need for collective efforts to reduce them and combat climate change in the future.
+                <div class="pure-u-3-4">
+                    <div class="page-title-description">
+                        Global CO2 emissions have been on the <span class="bold red">rise</span>, with various sectors contributing to this increase. Key sources include the burning of <span class="bold red">oil, natural gas</span>, 
+                        and <span class="bold red">coal</span> for energy production, <span class="bold red">cement</span> production, <span class="bold red">flaring</span> of natural gas, and other industrial processes. These emissions collectively exacerbate 
+                        the challenge of <span class="bold red">climate change</span>, necessitating urgent action to curb them.
+                    </div>
+                    <div class="page-title-description">
+                        Apart from the major industrial sectors like <span class="bold red">power</span> generation and <span class="bold red">industry</span>, other contributors to CO2 emissions include <span class="bold red">residential</span> energy use, 
+                        <span class="bold red">ground transportation</span>, and <span class="bold red">aviation</span>. Visualizations depicting these varied sources aim to raise awareness about the multifaceted nature of global CO2 emissions, underscoring the need for collective efforts to reduce them and combat climate change in the future.
+                    </div>
                 </div>
             </div>
             <div class="pure-u-1-2">
-                <div class="page-title-description">
-                    This visualisation utilised <span class="bold red">3 datasets</span> spanning the years <span class="bold red">1950 to 2020</span>. The first dataset is 
-                    the CO2 emissions by countries, which contains the CO2 emissions of <span class="red bold red">192 countries</span>. The second dataset is the CO2 emissions by sectors, which contains 
-                    the CO2 emissions of <span class="bold red">6 sectors</span>. The third dataset is the CO2 emissions by fuel, which contains the CO2 emissions of <span class="bold red">5 types</span>.
+                <div class="pure-u-1-8">
                 </div>
-                <div class="page-title-description">
-                    Other than that this visualisation uses <span class="bold red">CO2 Emissions per Capita in Tons</span> as well as <span class="bold red">Metric tons of carbon dioxide equivalent (MTCO2e)</span> to represent the CO2 emissions. CO2 Emissions per Capita in Tons is the CO2 emissions divided by the population of the country. MTCO2e is the CO2 emissions multiplied by the Global Warming Potential of the gas.
+                <div class="pure-u-3-4" style="margin-left: -5%;">
+                    <div class="page-title-description">
+                        This visualisation utilised <span class="bold red">3 datasets</span> spanning the years <span class="bold red">1950 to 2020</span>. The first dataset is 
+                        the CO2 emissions by countries, which contains the CO2 emissions of <span class="red bold red">192 countries</span>. The second dataset is the CO2 emissions by sectors, which contains 
+                        the CO2 emissions of <span class="bold red">6 sectors</span>. The third dataset is the CO2 emissions by fuel, which contains the CO2 emissions of <span class="bold red">5 types</span>.
+                    </div>
+                    <div class="page-title-description">
+                        Other than that this visualisation uses <span class="bold red">CO2 Emissions per Capita in Tons</span> as well as <span class="bold red">Metric tons of carbon dioxide equivalent (MTCO2e)</span> to represent the CO2 emissions. CO2 Emissions per Capita in Tons is the CO2 emissions divided by the population of the country. MTCO2e is the CO2 emissions multiplied by the Global Warming Potential of the gas.
+                    </div>
                 </div>
             </div>
 
@@ -65,12 +73,12 @@
                     </div>
                     <div class="pure-u-3-4">
                         <div class="idiom-title">CO2 EMISSIONS OF COUNTRIES FROM YEAR 1950 - 2020</div>
+                        <div class="idiom-subtitle">There has been a <span class="bold red">big increase</span> in CO2 emissions per Capita over the years. 
+                            Most Noticably, developed countries in continents such as <span class="red bold">Europe, Australia</span> and <span class="bold red">North America</span>. 
+                        </div>
+                        <div id="choropleth_map" style="margin-top: 1%;"></div>
                     </div>
-                    <div class="idiom-subtitle">From the map below, we can see that over the years there has been a <span class="bold red">big increase</span> in CO2 emissions per Capita over the years. 
-                        Most Noticably, developed countries in continents such as <span class="red bold">Europe, Australia</span> and <span class="bold red">North America</span> have seen the biggest increase. 
-                    </div>
-                    <div class="idiom-subtitle" style="margin-bottom: 60px;">You can utilise the year slider to see the change in CO2 emissions over the years.</div>
-                    <div id="choropleth_map"></div>
+                    
                 </div>
 
                 <div class="pure-u-1-2 idiom">
@@ -81,16 +89,13 @@
                     </div>
                     <div class="pure-u-3-4">
                         <div class="idiom-title">COUNTRIES <span class="orange bold">ABOVE</span> AND <span class="blue bold">BELOW</span> THE AVERAGE CO2 EMISSIONS PER CAPITA IN 2020</div>
+                        <div class="idiom-subtitle">
+                            Countries in <span class="bold red">Europe</span> and  <span class="bold red">Africa</span> has the highest ratio of countries <span class="orange bold">above</span> 
+                            and <span class="blue bold">below</span> the average CO2 emissions per capita respectively.
+                        </div>
+                        <div id="unit_stacked_chart"></div>
                     </div>
-                    <div class="idiom-subtitle">
-                        Below is a unit stacked chart to investigate the ratio of countries which are <span class="orange bold">above</span> and <span class="blue bold">below</span> the average CO2 emissions per capita in each continent in the year 2020.
-                    </div>
-                    <div class="idiom-subtitle">
-                        Countries in <span class="bold red">Europe</span> has the highest ratio of countries <span class="orange bold">above</span> the average CO2 emissions
-                         per capita while countries in Africa has the highest ratio of countries <span class="blue bold">below</span> the average CO2 emissions per capita.
-                        This is likely due to the fact that countries in Europe are more developed and have a higher GDP per capita compared to countries in Africa.
-                    </div>
-                    <div id="unit_stacked_chart"></div>
+                    
                 </div>
 
                 <div class="pure-u-1-2 idiom">
@@ -101,16 +106,14 @@
                     </div>
                     <div class="pure-u-3-4">
                         <div class="idiom-title">DISTRIBUTION OF POPULATION AND AREA OVER CO2 EMISSIONS</div>
+                        <div class="idiom-subtitle">
+                            There is a <span class="bold red">positive correlation</span> between the <span class="bold red">population</span> and
+                            <span class="bold red">area</span> of a country with the <span class="bold red">CO2 emissions</span> of a country albeit some outliers include
+                            Puerto Rico.
+                        </div>
+                        <div id="bubble_plot" style="margin-top: 1%;"></div>
                     </div>
-                    <div class="idiom-subtitle">
-                        From the bubble chart below, we can observe that there is a <span class="bold red">positive correlation</span> between the <span class="bold red">population</span> and
-                        <span class="bold red">area</span> of a country with the <span class="bold red">CO2 emissions</span> of a country albeit some outliers include
-                        Puerto Rico.
-                    </div>
-                    <div class="idiom-subtitle" style="margin-bottom: 30px;">
-                        You can utilise the sliders and selection menu to control the year, minimum area, maximum area as well the continents.
-                    </div>
-                    <div id="bubble_plot"></div>
+                    
                 </div>
 
                 <div class="pure-u-1-2 idiom"; style="margin-bottom: -100px">
@@ -121,15 +124,13 @@
                     </div>
                     <div class="pure-u-3-4">
                         <div class="idiom-title">RANKING OF COUNTRIES WITH HIGHEST CO2 EMISSIONS OVER THE YEARS</div>
+                        <div class=" idiom-subtitle">
+                            The top 5 countries with the highest CO2 emissions have <span class="bold red">remained the same </span> for the last 10 years.
+                            Even looking at the top 10 countries, there has been <span class="bold red">little change</span> in the countries that are the highest emitters of CO2 emissions.
+                        </div>
+                        <div id="bump_chart"></div>
                     </div>
-                    <div class=" idiom-subtitle">
-                        From years 2010 - 2020, the top 5 countries with the highest CO2 emissions have <span class="bold red">remained the same </span> with the USA surpassing Estonia to be the higest emitter of CO2 emissions in the year 2020. 
-                        Even looking at the top 10 countries, there has been <span class="bold red">little change</span> in the countries that are the highest emitters of CO2 emissions.
-                    </div>
-                    <div class="idiom-subtitle">You can utilise the Top-n countries slider to adjust how many rankings to see. Clicking on any bar or legend will highlight the changes in ranking 
-                        for that particular country. 
-                    </div>
-                    <div id="bump_chart"></div>
+                    
                 </div>
 
                 <div class="pure-u-1-2 idiom">
@@ -140,17 +141,13 @@
                     </div>
                     <div class="pure-u-3-4">
                         <div class="idiom-title">DISTRIBUTION OF CO2 EMISSION SECTORS OF 4 MAJOR COUNTRIES</div>
+                        <div class="idiom-subtitle">
+                            China, Japan have high CO2 emissions in sectors such as <span class="bold red">Power</span> and <span class="bold red">Industry</span> while USA which has a poor public transport system 
+                            has higher proportion in the <span class="bold red">Ground Transportation</span> sector.
+                        </div>
+                        <div id="mosaic_chart" style="margin-left: -2.5%;"></div>
                     </div>
-                    <div class="idiom-subtitle">
-                        Below is a mosaic chart or merimekko chart of 4 major countries (China, Japan, UK, USA) and CO2 emissions by sectors in the year 2020. The emission
-                        sectors include, <span class="bold red">Ground Transport, Residential, Power, Industry</span> and <span class="bold red">Aviation</span>.
-                    </div>
-                    <div class="idiom-subtitle">
-                        We can see that out of the 4 major countries, China, Japan and USA which are largely manufacturing countries have high CO2 emissions
-                        in sectors such as <span class="bold red">Power</span> and <span class="bold red">Industry</span>. Meanwhile, USA which has a poor public transport system 
-                        has a high CO2 emissions in the <span class="bold red">Ground Transportation</span> sector.
-                    </div>
-                    <div id="mosaic_chart"></div>
+                    
                 </div>
     
                 <div class="pure-u-1-2 idiom">
@@ -160,18 +157,14 @@
                           </svg>
                     </div>
                     <div class="pure-u-3-4">
-                        <div class="idiom-title">DISTRIBUTION OF CONTINENTS AND EMISSION TYPES</div>
+                        <div class="idiom-title">DISTRIBUTION OF CONTINENTS AND EMISSION TYPES IN 2020</div>
+                        <div class="idiom-subtitle">
+                            <span class="bold red">Asia</span> is the continent with 
+                            the highest CO2 emissions while burning of <span class="bold red">coal</span> is the highest cause of CO2 emissions in the world in the world. 
+                        </div>
+                        <div id="sankey_diagram" style="margin-left: -4.3%; margin-top: 10.3%;"></div>
                     </div>
-                    <div class="idiom-subtitle">
-                        This Sankey/Alluvial diagram showcases the distribution of each continent and their CO2 emission types in the year 2020.
-                        The CO2 emission types include <span class="bold red">cement, coal, flaring, gas, oil</span> and <span class="bold red">other</span>. We can see that <span class="bold red">Asia</span> is the continent with 
-                        the highest CO2 emissions and burning of <span class="bold red">coal</span> is the highest cause of CO2 emissions in the world. 
-                    </div>
-                    <div class="idiom-subtitle" style="margin-bottom: 73px;">
-                        You can click on the bars at the most left and right to expand on the continents and the CO2 emission types respectively. You can click on Show All 
-                        afterwards to return to the main diagram.
-                    </div>
-                    <div id="sankey_diagram"></div>
+                    
                 </div>
 
                 <div class="pure-u-1-1 idiom">
@@ -182,17 +175,13 @@
                     </div>
                     <div class="pure-u-1-2">
                         <div class="idiom-title">CO2 EMISSION PER CAPITA OF <span class="bold orange">MALAYSIA</span> AND <span class="bold blue">AUSTRALIA</span> FROM 1960 - 2020</div>
+                        <div class="idiom-subtitle">
+                            The CO2 emissions per capita of <span class="bold orange">Malaysia</span> has been on the <span class="bold red">rise steadily</span> while 
+                            <span class="bold blue">Australia</span> has been on an <span class="bold red">exponential increase</span> in CO2 emissions per capita 
+                            signifying the development of the country at the expense of the environment.
+                        </div>
+                        <div id="line_chart"></div>
                     </div>
-                    <div class="idiom-subtitle">
-                        The Line chart below showcases the CO2 emissions per capita of <span class="bold orange">Malaysia</span> and <span class="bold blue">Australia</span> from 1960 - 2020. 
-                        We can see that the CO2 emissions per capita of <span class="bold orange">Malaysia</span> has been on the <span class="bold red">rise steadily</span> while 
-                        <span class="bold blue">Australia</span> has been on an <span class="bold red">exponential increase</span> in CO2 emissions per capita 
-                        signifying the development of the country at the expense of the environment.
-                    </div>
-                    <div class="idiom-subtitle">
-                        You can brush through the years by interacting with the smaller line chart below to delve deeper into the individual years. 
-                    </div>
-                    <div id="line_chart"></div>
                 </div>
             </div>
 

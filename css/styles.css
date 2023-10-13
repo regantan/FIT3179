@@ -35,7 +35,8 @@ body *{
     font-weight: 300;
     margin-bottom: 20px;
     color: black;
-    padding: 0 200px ;
+    margin-left: 100px;
+    /* padding: 0 20% ; */
 }
 
 .line-break {
@@ -84,9 +85,13 @@ body *{
 }
 
 .red{
-    color: var(--red);
+    color: black;
 }
 
 .bold {
     font-weight: 600;
+}
+
+.chart {
+    height: 40%;
 }

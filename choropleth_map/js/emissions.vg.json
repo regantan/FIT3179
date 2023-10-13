@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 550,
-  "height": 400,
+  "width": 560,
+  "height": 415,
   "data": {
     "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/choropleth_map/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -17,41 +17,11 @@
         "step": 1,
         "name": "Year:   "
       }
-    },
-    {
-      "name": "zoom_level",
-      "value": 200,
-      "bind": {
-        "input": "range",
-        "min": 100,
-        "max": 650,
-        "step": 50,
-        "name": "Zoom: "
-      }
-    },
-    {
-      "name": "center_to",
-      "value": [30,0],
-      "bind": {
-        "input": "select",
-        "options": [
-          [30,0],
-          [90,20],
-          [135,-25],
-          [35,55],
-          [-95,45],
-          [-60,-20],
-          [0,0]
-        ],
-        "labels": ["Africa", "Asia", "Australia", "Europe", "North America", "South America","World"],
-        "name": "Map Centre: "
-      }
     }
   ],
   "projection": {
     "type": "equalEarth",
-    "center": {"expr": "center_to"},
-    "scale": {"expr": "zoom_level"}
+    "scale": 125
   },
   "layer":[
     {
@@ -99,7 +69,7 @@
         "shape": {"field": "geo", "type": "geojson"},
         "color": {
           "field": "emission_capita",
-          "title": "CO2 Emission per Capita (Tons)",
+          "title": "CO2 Emission/Capita (Tons)",
           "type": "quantitative",
           "scale": {
             "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
@@ -161,7 +131,7 @@
         "text": {"field": "properties.NAME", "type": "nominal"},
         "opacity": {
           "condition": {
-            "test": "datum['properties.NAME'] == 'Malaysia' || datum['properties.NAME'] == 'Japan' || datum['properties.NAME'] == 'United Kingdom'|| datum['properties.NAME'] == 'Canada'",
+            "test": "datum['properties.NAME'] == 'Malaysia' || datum['properties.NAME'] == 'Japan'|| datum['properties.NAME'] == 'Canada'",
             "value": 1
           },
           "value": 0

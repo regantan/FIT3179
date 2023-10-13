@@ -5,7 +5,7 @@
     },
     "vconcat": [
       {
-        "width": 1600,
+        "width": 1500,
         "height": 300,
         "layer": [
           {
@@ -386,7 +386,7 @@
         ]
       },
       {
-        "width": 1600,
+        "width": 1500,
         "height": 80,
         "layer": [
           {

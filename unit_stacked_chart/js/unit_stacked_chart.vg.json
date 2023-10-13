@@ -1,10 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "width": 650,
+    "height": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/regantan/FIT3179/main/unit_stacked_chart/data/co2_emissions_2020.csv"
     },
-    "width": 500,
-    "height": 400,
     "transform": [{"calculate": "pad(datum.group_id, 3, '0', 'left')", "as": "Y"}],
     "encoding": {
       "x": {
