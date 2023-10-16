@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
 
@@ -188,8 +192,11 @@
             <div class="line-break"></div>
 
             <div class="pure-u-1-1 footer">
-                <p>This visualisation is created by <a href="https://github.com/regantan/FIT3179" target="_blank">Tan Won Lun</a>. The datasource is obtained from
-                  <a href="https://www.kaggle.com/datasets/moazzimalibhatti/co2-emission-by-countries-year-wise-17502022?select=CO2+emission+by+countries.csv" target=" _blank">kaggle</href>.</p>
+                <p>This visualisation is created by <a href="https://github.com/regantan/FIT3179" target="_blank">Tan Won Lun</a>. The datasources are obtained from
+                    <a href="https://www.kaggle.com/datasets/moazzimalibhatti/co2-emission-by-countries-year-wise-17502022?select=CO2+emission+by+countries.csv" target=" _blank">CO2 Emission by countries Year wise (1750-2022)</href>, 
+                    <a href="https://www.kaggle.com/datasets/thedevastator/global-fossil-co2-emissions-by-country-2002-2022?select=GCB2022v27_percapita_flat.csv" target=" _blank">Emissions by Country</a> and 
+                    <a href="https://www.kaggle.com/datasets/saloni1712/co2-emissions" target=" _blank">CO2 Emissions by Sectors</a>.
+                </p>
             </div>
 
         </div>
@@ -199,37 +206,37 @@
 
 <script type="text/javascript">
         var spec1 = "choropleth_map/js/emissions.vg.json";
-        vegaEmbed('#choropleth_map', spec1, { "actions": true }).then(function(result) {
+        vegaEmbed('#choropleth_map', spec1, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var spec2 = "bubble_plot/js/bubble_plot.vg.json";
-        vegaEmbed('#bubble_plot', spec2, { "actions": true }).then(function(result) {
+        vegaEmbed('#bubble_plot', spec2, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var spec3 = "bump_chart/js/bump_chart.vg.json";
-        vegaEmbed('#bump_chart', spec3, { "actions": true }).then(function(result) {
+        vegaEmbed('#bump_chart', spec3, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var spec4 = "unit_stacked_chart/js/unit_stacked_chart.vg.json";
-        vegaEmbed('#unit_stacked_chart', spec4, { "actions": true }).then(function(result) {
+        vegaEmbed('#unit_stacked_chart', spec4, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var spec5 = "mosaic_chart/js/mosaic_chart.vg.json";
-        vegaEmbed('#mosaic_chart', spec5, { "actions": true }).then(function(result) {
+        vegaEmbed('#mosaic_chart', spec5, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var spec6 = "line_chart/js/line_chart.vg.json";
-        vegaEmbed('#line_chart', spec6, { "actions": true }).then(function(result) {
+        vegaEmbed('#line_chart', spec6, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var spec7 = "sankey_diagram/js/sankey_diagram.vg.json";
-        vegaEmbed('#sankey_diagram', spec7, { "actions": true }).then(function(result) {
+        vegaEmbed('#sankey_diagram', spec7, { "actions": false }).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 </script>

@@ -4,11 +4,12 @@
     --red: #ed7a7b;
     --description-font-size: 16px;
     --idiom-font-size: 26px;
-    --title-font: 'Gothic A1', sans-serif;
+    --title-font: 'Noto Serif', serif;
+
 }
 
 body *{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 body {
@@ -93,7 +94,8 @@ body {
 }
 
 .bold {
-    font-weight: 600;
+    font-weight: 700;
+    font-family: inherit;
 }
 
 .chart {

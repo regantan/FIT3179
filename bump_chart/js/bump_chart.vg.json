@@ -57,7 +57,7 @@
                 "field": "Country",
                 "scale" : {
                     "domain": ["Estonia","United States of America","United Kingdom","Luxembourg","Germany","Belgium","Trinidad and Tobago","Canada","Ukraine","Russia","Brunei"],
-                    "range": ["#0570b0","#3690c0","#fdbe85","#fd8d3c","#e6550d","lightgray","lightgray","lightgray","lightgray","lightgray","lightgray"]
+                    "range": ["#395989","#3690c0","#fdbe85","#fd8d3c","#e6550d","lightgray","lightgray","lightgray","lightgray","lightgray","lightgray"]
                 }
             } ,
         "size":{
