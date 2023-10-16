@@ -11,6 +11,10 @@ body *{
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    width: 1920px;
+}
+
 .pure-g {
     margin-bottom: 40px;
 }
